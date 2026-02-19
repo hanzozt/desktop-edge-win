@@ -25,7 +25,7 @@ These are the tests you need to make sure to perform per release.
 - Identity marked as enabled is enabled on restart
 - Identity with overlapping service definitions in two different networks
 - 
-- Multiple ziti edge tunnels running at one time, intercepts are removed on clean shutdown
+- Multiple zt edge tunnels running at one time, intercepts are removed on clean shutdown
 
 
 ### Adding Identities
@@ -68,8 +68,8 @@ These are the tests you need to make sure to perform per release.
 
       .\setup-ids-for-test.ps1 `
         -ClearIdentitiesOk `
-        -Url "$zitiControllerAddress:$zitiControllerPort" `
-        -RouterName "$zitiRouterName" `
+        -Url "$ztControllerAddress:$ztControllerPort" `
+        -RouterName "$ztRouterName" `
         -ZitiHome "$pathToPlaceFiles" `
         -ExternalId "some.email@address.com"
 

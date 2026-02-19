@@ -1,4 +1,4 @@
-# ziti-client-windows
+# zt-client-windows
 
 This is a Windows 10 vpn plugin that "almost" works with windows 10. The VPN API is very fragile 
 and replacing the wrong element in the wrong place will likely result in errors.

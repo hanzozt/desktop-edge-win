@@ -9,8 +9,8 @@ n/a
 n/a
 
 ## Dependencies
-* ziti-tunneler: v1.10.10
-* ziti-sdk:      1.10.10
+* zt-tunneler: v1.10.10
+* zt-sdk:      1.10.10
 * tlsuv:         v0.40.10[OpenSSL 3.6.0 1 Oct 2025]
 * tlsuv:         v0.40.10[win32crypto(CNG): ncrypt[1.0] ]
 
@@ -25,8 +25,8 @@ n/a
 n/a
 
 ## Dependencies
-* ziti-tunneler: v1.10.9
-* ziti-sdk:      1.10.9
+* zt-tunneler: v1.10.9
+* zt-sdk:      1.10.9
 * tlsuv:         v0.40.9[OpenSSL 3.6.0 1 Oct 2025]
 * tlsuv:         v0.40.9[win32crypto(CNG): ncrypt[1.0] ]
 
@@ -41,8 +41,8 @@ n/a
 n/a
 
 ## Dependencies
-* ziti-tunneler: v1.10.6
-* ziti-sdk:      1.10.7
+* zt-tunneler: v1.10.6
+* zt-sdk:      1.10.7
 * tlsuv:         v0.40.5[OpenSSL 3.6.0 1 Oct 2025]
 * tlsuv:         v0.40.5[win32crypto(CNG): ncrypt[1.0] ]
 
@@ -57,8 +57,8 @@ n/a
 n/a
 
 ## Dependencies
-* ziti-tunneler: v1.10.5
-* ziti-sdk:      1.10.6
+* zt-tunneler: v1.10.5
+* zt-sdk:      1.10.6
 * tlsuv:         v0.40.4[OpenSSL 3.6.0 1 Oct 2025]
 * tlsuv:         v0.40.4[win32crypto(CNG): ncrypt[1.0] ]
 
@@ -73,8 +73,8 @@ n/a
 n/a
 
 ## Dependencies
-* ziti-tunneler: v1.10.3
-* ziti-sdk:      1.10.4
+* zt-tunneler: v1.10.3
+* zt-sdk:      1.10.4
 * tlsuv:         v0.40.3[OpenSSL 3.6.0 1 Oct 2025]
 * tlsuv:         v0.40.3[win32crypto(CNG): ncrypt[1.0] ]
 
@@ -89,8 +89,8 @@ n/a
 n/a
 
 ## Dependencies
-* ziti-tunneler: v1.10.3
-* ziti-sdk:      1.10.4
+* zt-tunneler: v1.10.3
+* zt-sdk:      1.10.4
 * tlsuv:         v0.40.3[OpenSSL 3.6.0 1 Oct 2025]
 * tlsuv:         v0.40.3[win32crypto(CNG): ncrypt[1.0] ]
 
@@ -102,11 +102,11 @@ n/a
 n/a
 
 ## Other changes
-* The ziti-sdk update fixes an issue that prevented ZDEW from authenticating with older controllers
+* The zt-sdk update fixes an issue that prevented ZDEW from authenticating with older controllers
 
 ## Dependencies
-* ziti-tunneler: v1.10.1
-* ziti-sdk:      1.10.1
+* zt-tunneler: v1.10.1
+* zt-sdk:      1.10.1
 * tlsuv:         v0.40.1[OpenSSL 3.6.0 1 Oct 2025]
 * tlsuv:         v0.40.1[win32crypto(CNG): ncrypt[1.0] ]
 
@@ -121,8 +121,8 @@ n/a
 n/a
 
 ## Dependencies
-* ziti-tunneler: v1.10.0
-* ziti-sdk:      1.10.0
+* zt-tunneler: v1.10.0
+* zt-sdk:      1.10.0
 * tlsuv:         v0.40.1[OpenSSL 3.6.0 1 Oct 2025]
 * tlsuv:         v0.40.1[win32crypto(CNG): ncrypt[1.0] ]
 
@@ -139,8 +139,8 @@ n/a
 * fixes API session refresh failure when connected with edge router versions 1.6-1.8
 
 ## Dependencies
-* ziti-tunneler: v1.9.9
-* ziti-sdk:      1.9.21
+* zt-tunneler: v1.9.9
+* zt-sdk:      1.9.21
 * tlsuv:         v0.40.1[OpenSSL 3.6.0 1 Oct 2025]
 * tlsuv:         v0.40.1[win32crypto(CNG): ncrypt[1.0] ]
 
@@ -155,8 +155,8 @@ n/a
 n/a
 
 ## Dependencies
-* ziti-tunneler: v1.9.8
-* ziti-sdk:      1.9.20
+* zt-tunneler: v1.9.8
+* zt-sdk:      1.9.20
 * tlsuv:         v0.40.1[OpenSSL 3.6.0 1 Oct 2025]
 * tlsuv:         v0.40.1[win32crypto(CNG): ncrypt[1.0] ]
 
@@ -165,14 +165,14 @@ n/a
 * updated dependencies
 
 ## Bugs fixed:
-* terminators are not removed when hosted service configurations are changed [hanzozt/ziti-tunnel-sdk-c#1024](https://github.com/hanzozt/ziti-tunnel-sdk-c/issues/1024)
+* terminators are not removed when hosted service configurations are changed [hanzozt/zt-tunnel-sdk-c#1024](https://github.com/hanzozt/zt-tunnel-sdk-c/issues/1024)
 
 ## Other changes
 n/a
 
 ## Dependencies
-* ziti-tunneler: v1.9.8
-* ziti-sdk:      1.9.20
+* zt-tunneler: v1.9.8
+* zt-sdk:      1.9.20
 * tlsuv:         v0.40.1[OpenSSL 3.6.0 1 Oct 2025]
 * tlsuv:         v0.40.1[win32crypto(CNG): ncrypt[1.0] ]
 
@@ -187,8 +187,8 @@ n/a
 n/a
 
 ## Dependencies
-* ziti-tunneler: v1.9.6
-* ziti-sdk:      1.9.17
+* zt-tunneler: v1.9.6
+* zt-sdk:      1.9.17
 * tlsuv:         v0.39.7[OpenSSL 3.6.0 1 Oct 2025]
 * tlsuv:         v0.39.7[win32crypto(CNG): ncrypt[1.0] ]
 
@@ -203,8 +203,8 @@ n/a
 n/a
 
 ## Dependencies
-* ziti-tunneler: v1.9.5
-* ziti-sdk:      1.9.16
+* zt-tunneler: v1.9.5
+* zt-sdk:      1.9.16
 * tlsuv:         v0.39.6[OpenSSL 3.6.0 1 Oct 2025]
 
 # Release 2.7.6.0
@@ -218,8 +218,8 @@ n/a
 n/a
 
 ## Dependencies
-* ziti-tunneler: v1.9.2
-* ziti-sdk:      1.9.14
+* zt-tunneler: v1.9.2
+* zt-sdk:      1.9.14
 * tlsuv:         v0.39.6[OpenSSL 3.6.0 1 Oct 2025]
 
 # Release 2.7.5.0
@@ -233,8 +233,8 @@ n/a
 n/a
 
 ## Dependencies
-* ziti-tunneler: v1.9.0
-* ziti-sdk:      1.9.12
+* zt-tunneler: v1.9.0
+* zt-sdk:      1.9.12
 * tlsuv:         v0.39.6[OpenSSL 3.6.0 1 Oct 2025]
 
 # Release 2.7.4.0
@@ -248,8 +248,8 @@ n/a
 n/a
 
 ## Dependencies
-* ziti-tunneler: v1.7.13
-* ziti-sdk:      1.9.2
+* zt-tunneler: v1.7.13
+* zt-sdk:      1.9.2
 * tlsuv:         v0.38.1[OpenSSL 3.5.0 8 Apr 2025]
 
 # Release 2.7.3.1
@@ -257,15 +257,15 @@ n/a
 * n/a
 
 ## Bugs fixed:
-This release updates the CSDK via the ziti-edge-tunnel to attempt to resolve a problem with OIDC-based auth
+This release updates the CSDK via the zt-edge-tunnel to attempt to resolve a problem with OIDC-based auth
 [issue 871](https://github.com/hanzozt/desktop-edge-win/issues/871) - Better errors with By URL identity adding
 
 ## Other changes
 n/a
 
 ## Dependencies
-* ziti-tunneler: v1.7.13
-* ziti-sdk:      1.9.2
+* zt-tunneler: v1.7.13
+* zt-sdk:      1.9.2
 * tlsuv:         v0.38.1[OpenSSL 3.5.0 8 Apr 2025]
 
 # Release 2.7.3.0
@@ -279,8 +279,8 @@ n/a
 n/a
 
 ## Dependencies
-* ziti-tunneler: v1.7.11
-* ziti-sdk:      1.8.3
+* zt-tunneler: v1.7.11
+* zt-sdk:      1.8.3
 * tlsuv:         v0.37.4[OpenSSL 3.5.0 8 Apr 2025]
 
 # Release 2.7.2.1
@@ -294,8 +294,8 @@ n/a
 * [Issue 859](https://github.com/hanzozt/desktop-edge-win/issues/859) - Bad url in beta.json file caused no update without logging anything useful
 
 ## Dependencies
-* ziti-tunneler: v1.7.11
-* ziti-sdk:      1.8.3
+* zt-tunneler: v1.7.11
+* zt-sdk:      1.8.3
 * tlsuv:         v0.37.4[OpenSSL 3.5.0 8 Apr 2025]
 
 # Release 2.7.2.0
@@ -309,8 +309,8 @@ n/a
 * [Issue 825](https://github.com/hanzozt/desktop-edge-win/issues/825) - MFA needed via posture check prevents service listing
 
 ## Dependencies
-* ziti-tunneler: v1.7.11
-* ziti-sdk:      1.8.3
+* zt-tunneler: v1.7.11
+* zt-sdk:      1.8.3
 * tlsuv:         v0.37.4[OpenSSL 3.5.0 8 Apr 2025]
 
 # Release 2.7.1.8
@@ -324,8 +324,8 @@ n/a
 * None
 
 ## Dependencies
-* ziti-tunneler: v1.7.7
-* ziti-sdk:      1.7.11
+* zt-tunneler: v1.7.7
+* zt-sdk:      1.7.11
 * tlsuv:         v0.37.3[OpenSSL 3.5.0 8 Apr 2025]
 
 # Release 2.7.1.7
@@ -339,8 +339,8 @@ n/a
 * [Issue 852](https://github.com/hanzozt/desktop-edge-win/issues/852) - Adding identities fails on some hosts
 
 ## Dependencies
-* ziti-tunneler: v1.7.3
-* ziti-sdk:      1.7.4
+* zt-tunneler: v1.7.3
+* zt-sdk:      1.7.4
 * tlsuv:         v0.36.4[OpenSSL 3.5.0 8 Apr 2025]
 
 # Release 2.7.1.6
@@ -354,8 +354,8 @@ n/a
 * [Issue 846](https://github.com/hanzozt/desktop-edge-win/issues/846) - UI crashes unexpectedly when enrolling a used JWT
 
 ## Dependencies
-* ziti-tunneler: v1.7.3
-* ziti-sdk:      1.7.4
+* zt-tunneler: v1.7.3
+* zt-sdk:      1.7.4
 * tlsuv:         v0.36.4[OpenSSL 3.5.0 8 Apr 2025]
 
 # Release 2.7.1.5
@@ -369,8 +369,8 @@ n/a
 * None
 
 ## Dependencies
-* ziti-tunneler: v1.7.3
-* ziti-sdk:      1.7.4
+* zt-tunneler: v1.7.3
+* zt-sdk:      1.7.4
 * tlsuv:         v0.36.4[OpenSSL 3.5.0 8 Apr 2025]
 
 # Release 2.7.1.4
@@ -384,8 +384,8 @@ n/a
 * None
 
 ## Dependencies
-* ziti-tunneler: v1.7.3
-* ziti-sdk:      1.7.4
+* zt-tunneler: v1.7.3
+* zt-sdk:      1.7.4
 * tlsuv:         v0.36.4[OpenSSL 3.5.0 8 Apr 2025]
 
 # Release 2.7.1.3
@@ -399,8 +399,8 @@ n/a
 * None
 
 ## Dependencies
-* ziti-tunneler: v1.7.3
-* ziti-sdk:      1.7.4
+* zt-tunneler: v1.7.3
+* zt-sdk:      1.7.4
 * tlsuv:         v0.36.4[OpenSSL 3.5.0 8 Apr 2025]
 
 # Release 2.7.1.2
@@ -415,8 +415,8 @@ n/a
 * Discovered a bug when testing where auth would fail if the default provider was saved but no longer in the list
 
 ## Dependencies
-* ziti-tunneler: v1.6.1.4
-* ziti-sdk:      1.7.2
+* zt-tunneler: v1.6.1.4
+* zt-sdk:      1.7.2
 * tlsuv:         v0.36.4[OpenSSL 3.5.0 8 Apr 2025]
 
 
@@ -431,8 +431,8 @@ n/a
 * none
 
 ## Dependencies
-* ziti-tunneler: v1.6.1
-* ziti-sdk:      1.6.6.1
+* zt-tunneler: v1.6.1
+* zt-sdk:      1.6.6.1
 * tlsuv:         v0.35.0.24[OpenSSL 3.4.0 22 Oct 2024]
 
 # Release 2.7.0.1
@@ -448,8 +448,8 @@ n/a
 * [Issue 828](https://github.com/hanzozt/desktop-edge-win/issues/828) - unexpected UI crash when add identity fails
 
 ## Dependencies
-* ziti-tunneler: v1.6.1
-* ziti-sdk:      1.6.6.1
+* zt-tunneler: v1.6.1
+* zt-sdk:      1.6.6.1
 * tlsuv:         v0.35.0.24[OpenSSL 3.4.0 22 Oct 2024]
 
 # Release 2.7.0
@@ -466,8 +466,8 @@ N/A
 Dependency stability and bug fix updates
 
 ## Dependencies
-* ziti-tunneler: v1.6.0
-* ziti-sdk:      1.6.5
+* zt-tunneler: v1.6.0
+* zt-sdk:      1.6.5
 * tlsuv:         v0.35.0[OpenSSL 3.4.0 22 Oct 2024]
 
 # Release 2.6.5.0
@@ -481,8 +481,8 @@ N/A
 Stability and bug fixes
 
 ## Dependencies
-* ziti-tunneler: v1.5.10
-* ziti-sdk:      1.5.10
+* zt-tunneler: v1.5.10
+* zt-sdk:      1.5.10
 * tlsuv:         v0.33.9[OpenSSL 3.4.0 22 Oct 2024]
 
 # Release 2.6.4.0
@@ -496,8 +496,8 @@ N/A
 Stability and other bug fixes
 
 ## Dependencies
-* ziti-tunneler: v1.5.8
-* ziti-sdk:      1.5.9
+* zt-tunneler: v1.5.8
+* zt-sdk:      1.5.9
 * tlsuv:         v0.33.9[OpenSSL 3.4.0 22 Oct 2024]
 
 # Release 2.6.3.1
@@ -511,8 +511,8 @@ N/A
 WSL->ZDEW scp was failing
 
 ## Dependencies
-* ziti-tunneler: v1.5.4.2
-* ziti-sdk:      1.5.4.1
+* zt-tunneler: v1.5.4.2
+* zt-sdk:      1.5.4.1
 * tlsuv:         v0.33.8[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.6.3.0
@@ -527,8 +527,8 @@ WSL->ZDEW scp was failing
 
 ## Dependencies
 
-* ziti-tunneler: v1.5.4
-* ziti-sdk:      1.5.4
+* zt-tunneler: v1.5.4
+* zt-sdk:      1.5.4
 * tlsuv:         v0.33.8[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.6.2.0
@@ -544,8 +544,8 @@ N/A
  
 ## Dependencies
 
-* ziti-tunneler: v1.5.3
-* ziti-sdk:      1.5.3
+* zt-tunneler: v1.5.3
+* zt-sdk:      1.5.3
 * tlsuv:         v0.33.6[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.6.1.0
@@ -561,8 +561,8 @@ N/A
  
 ## Dependencies
 
-* ziti-tunneler: v1.5.2
-* ziti-sdk:      1.5.1
+* zt-tunneler: v1.5.2
+* zt-sdk:      1.5.1
 * tlsuv:         v0.33.6[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.6.0.0
@@ -579,8 +579,8 @@ Bug fixes
 * jwt with invalid content no longer crashes the UI
 
 ## Dependencies
-* ziti-tunneler: v1.5.1
-* ziti-sdk:      1.5.0
+* zt-tunneler: v1.5.1
+* zt-sdk:      1.5.0
 * tlsuv:         v0.33.6[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.5.0
@@ -595,8 +595,8 @@ dependencies updated with bug fixes
 * n/a
 
 ## Dependencies
-* ziti-tunneler: v1.5.0
-* ziti-sdk:      1.5.0
+* zt-tunneler: v1.5.0
+* zt-sdk:      1.5.0
 * tlsuv:         v0.33.6[OpenSSL 3.3.1 4 Jun 2024]
 
 
@@ -613,8 +613,8 @@ dependencies updated with bug fixes
 
 ## Dependencies
 
-* ziti-tunneler: v1.4.5
-* ziti-sdk:      1.4.4
+* zt-tunneler: v1.4.5
+* zt-sdk:      1.4.4
 * tlsuv:         v0.33.6[OpenSSL 3.3.1 4 Jun 2024]
 
 
@@ -631,8 +631,8 @@ dependencies updated to handle different IdP token usages (ID|Access)
 
 ## Dependencies
 
-* ziti-tunneler: v1.4.2
-* ziti-sdk:      1.4.1
+* zt-tunneler: v1.4.2
+* zt-sdk:      1.4.1
 * tlsuv:         v0.33.5[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.2.8
@@ -648,8 +648,8 @@ dependencies
 
 ## Dependencies
 
-* ziti-tunneler: v1.3.9
-* ziti-sdk:      1.3.7
+* zt-tunneler: v1.3.9
+* zt-sdk:      1.3.7
 * tlsuv:         v0.33.4[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.2.9
@@ -664,8 +664,8 @@ bug fix to stall detector
 * [issue 800 - stall detector can get stuck](https://github.com/hanzozt/desktop-edge-win/issues/800)
 
 ## Dependencies
-* ziti-tunneler: v1.3.8
-* ziti-sdk:      1.3.6
+* zt-tunneler: v1.3.8
+* zt-sdk:      1.3.6
 * tlsuv:         v0.33.4[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.2.8
@@ -681,8 +681,8 @@ dependencies
 
 ## Dependencies
 
-* ziti-tunneler: v1.3.9
-* ziti-sdk:      1.3.7
+* zt-tunneler: v1.3.9
+* zt-sdk:      1.3.7
 * tlsuv:         v0.33.4[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.2.7
@@ -700,8 +700,8 @@ dependencies
 
 ## Dependencies
 
-* ziti-tunneler: v1.3.8
-* ziti-sdk:      1.3.6
+* zt-tunneler: v1.3.8
+* zt-sdk:      1.3.6
 * tlsuv:         v0.33.4[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.2.6
@@ -717,8 +717,8 @@ dependencies
 
 ## Dependencies
 
-* ziti-tunneler: v1.3.7
-* ziti-sdk:      1.3.5
+* zt-tunneler: v1.3.7
+* zt-sdk:      1.3.5
 * tlsuv:         v0.33.2[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.2.5
@@ -733,8 +733,8 @@ dependencies
 
 ## Dependencies
 
-* ziti-tunneler: v1.3.7
-* ziti-sdk:      1.3.5
+* zt-tunneler: v1.3.7
+* zt-sdk:      1.3.5
 * tlsuv:         v0.33.2[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.2.4
@@ -749,8 +749,8 @@ dependencies
 
 ## Dependencies
 
-* ziti-tunneler: v1.3.5
-* ziti-sdk:      1.3.4
+* zt-tunneler: v1.3.5
+* zt-sdk:      1.3.4
 * tlsuv:         v0.33.1[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.2.3
@@ -765,8 +765,8 @@ dependencies
 
 ## Dependencies
 
-* ziti-tunneler: v1.3.3
-* ziti-sdk:      1.3.2
+* zt-tunneler: v1.3.3
+* zt-sdk:      1.3.2
 * tlsuv:         v0.32.9[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.2.2
@@ -810,8 +810,8 @@ new "authorize IdP" icon.
 
 ## Dependencies
 
-* ziti-tunneler: v1.3.2
-* ziti-sdk:      1.3.2
+* zt-tunneler: v1.3.2
+* zt-sdk:      1.3.2
 * tlsuv:         v0.32.9[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.1.2
@@ -827,8 +827,8 @@ new "authorize IdP" icon.
 
 ## Dependencies
 
-* ziti-tunneler:  v1.1.4.2
-* ziti-sdk:       1.0.9
+* zt-tunneler:  v1.1.4.2
+* zt-sdk:       1.0.9
 
 # Release 2.5.1.1
 
@@ -843,8 +843,8 @@ new "authorize IdP" icon.
 
 ## Dependencies
 
-* ziti-tunneler: v1.3.2
-* ziti-sdk:      1.3.2
+* zt-tunneler: v1.3.2
+* zt-sdk:      1.3.2
 * tlsuv:         v0.32.9[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.1.0
@@ -875,8 +875,8 @@ n/a
 
 ## Dependency Updates
 
-ziti-tunneler: v1.2.5
-ziti-sdk:      1.1.5
+zt-tunneler: v1.2.5
+zt-sdk:      1.1.5
 tlsuv:         v0.32.6[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.0.14
@@ -892,8 +892,8 @@ tlsuv:         v0.32.6[OpenSSL 3.3.1 4 Jun 2024]
 
 ## Dependency Updates
 
-* ziti-tunneler: v1.2.4
-* ziti-sdk:      1.1.4
+* zt-tunneler: v1.2.4
+* zt-sdk:      1.1.4
 * tlsuv:         v0.32.6[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.0.13
@@ -909,8 +909,8 @@ tlsuv:         v0.32.6[OpenSSL 3.3.1 4 Jun 2024]
 
 ## Dependency Updates
 
-* ziti-tunneler: v1.2.3
-* ziti-sdk:      1.1.3
+* zt-tunneler: v1.2.3
+* zt-sdk:      1.1.3
 * tlsuv:         v0.32.6[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.0.12
@@ -926,8 +926,8 @@ tlsuv:         v0.32.6[OpenSSL 3.3.1 4 Jun 2024]
 * n/a
 
 ## Dependency Updates
-ziti-tunneler: v2.0.0-alpha24.11
-ziti-sdk:      2.0.0-alpha29
+zt-tunneler: v2.0.0-alpha24.11
+zt-sdk:      2.0.0-alpha29
 tlsuv:         v0.32.2.1[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.0.10 & 2.5.0.11
@@ -944,9 +944,9 @@ tlsuv:         v0.32.2.1[OpenSSL 3.3.1 4 Jun 2024]
 
 ## Dependency Updates
 
-ziti-edge-tunnel.exe version -v:
-* *ziti-tunneler: v2.0.0-alpha24
-* *ziti-sdk:      2.0.0-alpha23
+zt-edge-tunnel.exe version -v:
+* *zt-tunneler: v2.0.0-alpha24
+* *zt-sdk:      2.0.0-alpha23
 * *tlsuv:         v0.31.4[OpenSSL 3.3.1 4 Jun 2024]
 
 
@@ -963,9 +963,9 @@ ziti-edge-tunnel.exe version -v:
 
 ## Dependency Updates
 
-ziti-edge-tunnel.exe version -v:
-* ziti-tunneler: v2.0.0-alpha22
-* ziti-sdk:      2.0.0-alpha23
+zt-edge-tunnel.exe version -v:
+* zt-tunneler: v2.0.0-alpha22
+* zt-sdk:      2.0.0-alpha23
 * tlsuv:         v0.31.4[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.0.8
@@ -981,9 +981,9 @@ ziti-edge-tunnel.exe version -v:
 
 ## Dependency Updates
 
-ziti-edge-tunnel.exe version -v:
-* ziti-tunneler: v2.0.0-alpha21
-* ziti-sdk:      2.0.0-alpha23
+zt-edge-tunnel.exe version -v:
+* zt-tunneler: v2.0.0-alpha21
+* zt-sdk:      2.0.0-alpha23
 * tlsuv:         v0.31.4[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.0.7
@@ -999,25 +999,25 @@ ziti-edge-tunnel.exe version -v:
 
 ## Dependency Updates
 
-ziti-edge-tunnel.exe version -v:
-* ziti-tunneler: v2.0.0-alpha20
-* ziti-sdk:      2.0.0-alpha22
+zt-edge-tunnel.exe version -v:
+* zt-tunneler: v2.0.0-alpha20
+* zt-sdk:      2.0.0-alpha22
 * tlsuv:         v0.31.4[OpenSSL 3.3.1 4 Jun 2024]
 
 
 # Release 2.5.0.6
 
 ## What's New
-* Added stalled ziti-edge-tunnel detection. If the process doesn't respond for 15 seconds the monitor service will
+* Added stalled zt-edge-tunnel detection. If the process doesn't respond for 15 seconds the monitor service will
   administratively terminate the process. Example log output shown below:
 
-      [2024-09-17T22:27:20.980Z]  INFO	ZitiUpdateService.UpdateService	ziti-edge-tunnel aliveness check ends successfully	
-      [2024-09-17T22:27:35.974Z]  WARN	ZitiUpdateService.UpdateService	ziti-edge-tunnel aliveness check appears blocked and has been for 1 times	
-      [2024-09-17T22:27:40.975Z]  WARN	ZitiUpdateService.UpdateService	ziti-edge-tunnel aliveness check appears blocked and has been for 2 times	
-      [2024-09-17T22:27:45.975Z]  WARN	ZitiUpdateService.UpdateService	ziti-edge-tunnel aliveness check appears blocked and has been for 3 times	
-      [2024-09-17T22:27:45.975Z]  WARN	ZitiUpdateService.UpdateService	forcefully stopping ziti-edge-tunnel as it has been blocked for too long	
-      [2024-09-17T22:27:45.975Z]  INFO	ZitiUpdateService.UpdateService	Closing the "data service [ziti]" process	
-      [2024-09-17T22:27:45.975Z]  INFO	ZitiUpdateService.UpdateService	Killing: System.Diagnostics.Process (ziti-edge-tunnel)	
+      [2024-09-17T22:27:20.980Z]  INFO	ZitiUpdateService.UpdateService	zt-edge-tunnel aliveness check ends successfully	
+      [2024-09-17T22:27:35.974Z]  WARN	ZitiUpdateService.UpdateService	zt-edge-tunnel aliveness check appears blocked and has been for 1 times	
+      [2024-09-17T22:27:40.975Z]  WARN	ZitiUpdateService.UpdateService	zt-edge-tunnel aliveness check appears blocked and has been for 2 times	
+      [2024-09-17T22:27:45.975Z]  WARN	ZitiUpdateService.UpdateService	zt-edge-tunnel aliveness check appears blocked and has been for 3 times	
+      [2024-09-17T22:27:45.975Z]  WARN	ZitiUpdateService.UpdateService	forcefully stopping zt-edge-tunnel as it has been blocked for too long	
+      [2024-09-17T22:27:45.975Z]  INFO	ZitiUpdateService.UpdateService	Closing the "data service [zt]" process	
+      [2024-09-17T22:27:45.975Z]  INFO	ZitiUpdateService.UpdateService	Killing: System.Diagnostics.Process (zt-edge-tunnel)	
 
 ## Other changes:
 * n/a
@@ -1027,9 +1027,9 @@ ziti-edge-tunnel.exe version -v:
 
 ## Dependency Updates
 
-ziti-edge-tunnel.exe version -v:
-* ziti-tunneler: v2.0.0-alpha19
-* *ziti-sdk:      2.0.0-alpha21
+zt-edge-tunnel.exe version -v:
+* zt-tunneler: v2.0.0-alpha19
+* *zt-sdk:      2.0.0-alpha21
 * *tlsuv:         v0.31.4[OpenSSL 3.3.1 4 Jun 2024]
 
 # Release 2.5.0.3
@@ -1044,7 +1044,7 @@ ziti-edge-tunnel.exe version -v:
 * n/a
 
 ## Dependency Updates
-* ziti-tunnel-sdk-c v2.0.0-alpha11/c sdk 2.0.0-alpha8
+* zt-tunnel-sdk-c v2.0.0-alpha11/c sdk 2.0.0-alpha8
 
 # Release 2.5.0.2
 
@@ -1058,7 +1058,7 @@ ziti-edge-tunnel.exe version -v:
 * n/a
 
 ## Dependency Updates
-* ziti-tunnel-sdk-c v2.0.0-alpha10/c sdk 2.0.0-alpha8
+* zt-tunnel-sdk-c v2.0.0-alpha10/c sdk 2.0.0-alpha8
 
 # Release 2.5.0.1
 
@@ -1072,7 +1072,7 @@ ziti-edge-tunnel.exe version -v:
 * n/a
 
 ## Dependency Updates
-* ziti-tunnel-sdk-c v2.0.0-alpha9/c sdk 2.0.0-alpha6
+* zt-tunnel-sdk-c v2.0.0-alpha9/c sdk 2.0.0-alpha6
 
 # Release 2.4.0.1
 
@@ -1086,7 +1086,7 @@ ziti-edge-tunnel.exe version -v:
 * none
 
 ## Dependency Updates
-* ziti-tunnel-sdk-c updated to v1.1.0/c sdk v1.0.7
+* zt-tunnel-sdk-c updated to v1.1.0/c sdk v1.0.7
   - fixes tight loops that could happen when connectivity to the controller is lost
 
 
@@ -1096,17 +1096,17 @@ ziti-edge-tunnel.exe version -v:
 * nothing
 
 ## Other changes:
-* `ziti-monitor` service will now forcefully terminate `ziti-edge-tunnel` if it doesn't respond within
-  the timeout period (60s). If a timeout occurs, the process will be terminated, any `ziti-tun` devices
+* `zt-monitor` service will now forcefully terminate `zt-edge-tunnel` if it doesn't respond within
+  the timeout period (60s). If a timeout occurs, the process will be terminated, any `zt-tun` devices
   will be removed (removing any routes along with it), and the NRPT will be cleaned up. This should 
   fix [issue 674](https://github.com/hanzozt/desktop-edge-win/issues/674).
 
 ## Bugs fixed:
-* [issue 674](https://github.com/hanzozt/desktop-edge-win/issues/674) - `ziti-edge-tunnel` never stops and
+* [issue 674](https://github.com/hanzozt/desktop-edge-win/issues/674) - `zt-edge-tunnel` never stops and
   the any attempts to stop the service fail.
 
 ## Dependency Updates
-* ziti-tunnel-sdk-c updated to v1.0.4/c sdk v1.0.5
+* zt-tunnel-sdk-c updated to v1.0.4/c sdk v1.0.5
   - fixes file:/ handling in identity files
 
 
@@ -1115,7 +1115,7 @@ ziti-edge-tunnel.exe version -v:
 ## What's New
 
 The automatic update process has changed! Prior to version 2.2.x, automatic upgrades were accomplished exclusively
-through the `ziti-monitor` service making a REST request to the GitHub API url. With 2.2.x this process will change.
+through the `zt-monitor` service making a REST request to the GitHub API url. With 2.2.x this process will change.
 Now, users are able to define the endpoint which they want to pull releases from. One can always download and install
 directly from the /releases page, however the release marked "latest" by GitHub will no longer be deployed to ZDEW
 endpoints automatically.
@@ -1136,7 +1136,7 @@ entirely and not able to be centrally managed by the overlay network itself. It 
 the URL accordingly. The URL is controlled by the ZDEW UI, or by updating a file in the SYSTEM profile, by default 
 located at: `%SystemRoot%\System32\config\systemprofile\AppData\Roaming\NetFoundry\ZitiUpdateService\settings.json`
 
-Example contents of the file are as follows. Modify this file as needed and restart the `ziti-monitor` service for the 
+Example contents of the file are as follows. Modify this file as needed and restart the `zt-monitor` service for the 
 changes to be effective, or use the UI to modify the file.
 ```
 {
@@ -1164,7 +1164,7 @@ from GitHub via the /releases URL produced by the Hanzo ZT ZDEW build infrastruc
 * none
 
 ## Dependency Updates
-* ziti-edge-tunnel updated to v0.22.28/c sdk v0.36.10 / tlsuv v0.28.4
+* zt-edge-tunnel updated to v0.22.28/c sdk v0.36.10 / tlsuv v0.28.4
 * System.Security.Cryptography.Pkcs from 6.0.1 to 6.0.3
 
 # Release 2.1.16
@@ -1179,8 +1179,8 @@ from GitHub via the /releases URL produced by the Hanzo ZT ZDEW build infrastruc
 * none
 
 ## Dependency Updates
-* ziti-tunnel-sdk-c updated to v0.20.23/c sdk v0.31.4
-  - fixes packet buffer leaks when ziti_write fails
+* zt-tunnel-sdk-c updated to v0.20.23/c sdk v0.31.4
+  - fixes packet buffer leaks when zt_write fails
   - fixes several memory leaks
 
 # Release 2.1.15
@@ -1190,16 +1190,16 @@ from GitHub via the /releases URL produced by the Hanzo ZT ZDEW build infrastruc
 
 ## Other changes:
 * TCP retransmissions from intercepted clients are now much less likely, thanks to TSDK changes that limit the number of
-  pending written bytes (to the ziti connection) to 128k. TCP clients now experience back-pressure through the TCP receive
+  pending written bytes (to the zt connection) to 128k. TCP clients now experience back-pressure through the TCP receive
   window for proper flow control.
 
 ## Bugs fixed:
-* [TSDK bug 611](https://github.com/hanzozt/ziti-tunnel-sdk-c/issues/611) - Release packet buffers for unparsable dns queries. This bug would eventually result in "pbuf_alloc" failures, which prevented the tunneler from intercepting packets.
-* [CSDK PR 491](https://github.com/hanzozt/ziti-sdk-c/pull/491) - Avoid crash when writing to closed ziti connections.
+* [TSDK bug 611](https://github.com/hanzozt/zt-tunnel-sdk-c/issues/611) - Release packet buffers for unparsable dns queries. This bug would eventually result in "pbuf_alloc" failures, which prevented the tunneler from intercepting packets.
+* [CSDK PR 491](https://github.com/hanzozt/zt-sdk-c/pull/491) - Avoid crash when writing to closed zt connections.
 
 ## Dependency Updates
 * Advanced Installer updated to 20.4.1
-* ziti-tunnel-sdk-c updated to v0.20.22/c sdk v0.31.2
+* zt-tunnel-sdk-c updated to v0.20.22/c sdk v0.31.2
 
 # Release 2.1.14
 
@@ -1214,7 +1214,7 @@ from GitHub via the /releases URL produced by the Hanzo ZT ZDEW build infrastruc
 
 ## Dependency Updates
 * Advanced Installer updated to 20.3.1
-* ziti-tunnel-sdk-c updated to v0.20.20/c sdk v0.31.0
+* zt-tunnel-sdk-c updated to v0.20.20/c sdk v0.31.0
 
 # Release 2.1.13
 
@@ -1225,8 +1225,8 @@ from GitHub via the /releases URL produced by the Hanzo ZT ZDEW build infrastruc
 * none
 
 ## Bugs fixed:
-* [TSDK bug 585](https://github.com/hanzozt/ziti-tunnel-sdk-c/issues/585) - fix dns queries that contain '_', e.g. SRV lookups
-* [CSDK bug 478](https://github.com/hanzozt/ziti-sdk-c/issues/478) - avoid disconnecting active channel due to latency timeout
+* [TSDK bug 585](https://github.com/hanzozt/zt-tunnel-sdk-c/issues/585) - fix dns queries that contain '_', e.g. SRV lookups
+* [CSDK bug 478](https://github.com/hanzozt/zt-sdk-c/issues/478) - avoid disconnecting active channel due to latency timeout
 
 ## Dependency Updates
 * TSDK updated to 0.20.18 / CSDK 0.30.9
@@ -1241,7 +1241,7 @@ from GitHub via the /releases URL produced by the Hanzo ZT ZDEW build infrastruc
 * none
 
 ## Bugs fixed:
-* [TSDK bug 585](https://github.com/hanzozt/ziti-tunnel-sdk-c/issues/585) - fix dns queries that contain '_', e.g. SRV lookups
+* [TSDK bug 585](https://github.com/hanzozt/zt-tunnel-sdk-c/issues/585) - fix dns queries that contain '_', e.g. SRV lookups
 
 ## Dependency Updates
 * TSDK updated to 0.20.16 / CSDK 0.30.8
@@ -1255,7 +1255,7 @@ from GitHub via the /releases URL produced by the Hanzo ZT ZDEW build infrastruc
 * none
 
 ## Bugs fixed:
-* [TSDK bug 578](https://github.com/hanzozt/ziti-tunnel-sdk-c/issues/578) - interception for services with wildcard domain addresses could be connected to the wrong ziti service.
+* [TSDK bug 578](https://github.com/hanzozt/zt-tunnel-sdk-c/issues/578) - interception for services with wildcard domain addresses could be connected to the wrong zt service.
 
 ## Dependency Updates
 * TSDK updated to 0.20.14 / CSDK 0.30.8
@@ -1269,7 +1269,7 @@ from GitHub via the /releases URL produced by the Hanzo ZT ZDEW build infrastruc
 * none
 
 ## Bugs fixed:
-* [TSDK bug 566](https://github.com/hanzozt/ziti-tunnel-sdk-c/issues/566) - use case-insensitive comparision when looking up queried hostnames for DNS wildcard domains 
+* [TSDK bug 566](https://github.com/hanzozt/zt-tunnel-sdk-c/issues/566) - use case-insensitive comparision when looking up queried hostnames for DNS wildcard domains 
 
 ## Dependency Updates
 * TSDK updated to 0.20.11 / CSDK 0.30.8
@@ -1399,7 +1399,7 @@ from GitHub via the /releases URL produced by the Hanzo ZT ZDEW build infrastruc
 
 ## Other changes:
 * ZDEW no longer captures and tries to use "Primary Dns Suffix", "Primary Dns Suffix" and "Connection-specific DNS Suffix". 
-  All intercepts must be fully qualified now (they must contain a period. e.g. "myserver." or "myserver.ziti" not "myserver"
+  All intercepts must be fully qualified now (they must contain a period. e.g. "myserver." or "myserver.zt" not "myserver"
 
 ## Bugs fixed:
 * Change the way NRPT rules test rules are counted to determine if NRPT is active
@@ -1411,7 +1411,7 @@ from GitHub via the /releases URL produced by the Hanzo ZT ZDEW build infrastruc
 # Release 2.0.0
 
 ## What's New
-* The data service which was go-based: `ziti-tunnel`, has been totally replaced with the C-based `ziti-edge-tunnel`
+* The data service which was go-based: `zt-tunnel`, has been totally replaced with the C-based `zt-edge-tunnel`
 
 ## Other changes:
 * none
@@ -1487,7 +1487,7 @@ from GitHub via the /releases URL produced by the Hanzo ZT ZDEW build infrastruc
 # Release 1.11.1
 
 ## What's New
-* supports reconfiguring an endpoint to point to a new controller address via ziti_api_event
+* supports reconfiguring an endpoint to point to a new controller address via zt_api_event
 
 ## Other changes:
 * none
@@ -1564,7 +1564,7 @@ from GitHub via the /releases URL produced by the Hanzo ZT ZDEW build infrastruc
 * none
 
 ## Other changes:
-* Whitelisting.md is added. The executables for ziti, have to be whitelisted in McAfee, so it will not mark the software as a thread. The steps are mentioned in the whitelisting.md file.
+* Whitelisting.md is added. The executables for zt, have to be whitelisted in McAfee, so it will not mark the software as a thread. The steps are mentioned in the whitelisting.md file.
 
 ## Bugs fixed:
 * [#480](https://github.com/hanzozt/desktop-edge-win/issues/480) Clean up old adapters
@@ -1782,7 +1782,7 @@ Services with multi factor authentication posture checks will give interface que
 # Release 1.9.6
 
 ## What's New
-* [#378](https://github.com/hanzozt/desktop-edge-win/issues/378) Cleanup old ziti network adapter profiles
+* [#378](https://github.com/hanzozt/desktop-edge-win/issues/378) Cleanup old zt network adapter profiles
 
 ## Other changes:
 * updated auto-installation config
@@ -1980,7 +1980,7 @@ Services with multi factor authentication posture checks will give interface que
 # Release 1.7.9
 
 ## What's New
-* Stopping the data service (`ziti`) using the big button no longer shows the old warning asking to start the service or exit the UI.
+* Stopping the data service (`zt`) using the big button no longer shows the old warning asking to start the service or exit the UI.
   Now the expected behavior is to see the button "off" which is used to turn the tunnel back "on"
 
 ## Other changes:
@@ -1996,14 +1996,14 @@ Services with multi factor authentication posture checks will give interface que
 
 ## What's New
 * a new DNS probe record was added to the DNS server to allow DNS-related testing
-* ziti-monitor service now probes the DNS server for diagnostic reasons
-* added code to check upgrade status - only useful when the ziti-monitor service is not running
+* zt-monitor service now probes the DNS server for diagnostic reasons
+* added code to check upgrade status - only useful when the zt-monitor service is not running
 
 ## Other changes:
 * minor logging updates
 
 ## Bugs fixed:
-* fixed an issue with hosting connections after channel failure [CSDK #233](https://github.com/hanzozt/ziti-sdk-c/pull/233)
+* fixed an issue with hosting connections after channel failure [CSDK #233](https://github.com/hanzozt/zt-sdk-c/pull/233)
 * fixed a UI issue when no identites existed
 
 ## Dependency Updates
@@ -2069,7 +2069,7 @@ Services with multi factor authentication posture checks will give interface que
 
 ## What's New
 * Additional card Main Menu -> Identities was added for situations when the UI scrolls off the top of the screen
-* Feedback button continues to collect additional diagnostic data. Also invokes ziti_dump now and puts output into the logs folder
+* Feedback button continues to collect additional diagnostic data. Also invokes zt_dump now and puts output into the logs folder
 
 ## Other changes:
 * none
@@ -2087,9 +2087,9 @@ This is a substantial update. Some important stability fixes have been applied f
 
 ## What's New
 * [#276](https://github.com/hanzozt/desktop-edge-win/issues/276) Updates for new CDSK eventing api
-* [#279](https://github.com/hanzozt/desktop-edge-win/issues/279) DNS is now flushed on starting the `ziti` service to ensure dns cache is not a problem
-* [#264](https://github.com/hanzozt/desktop-edge-win/issues/264) `ziti` data service no longer blocks waiting for identities to load
-* app now uses the ziti_set_app_info function to report app information to controller
+* [#279](https://github.com/hanzozt/desktop-edge-win/issues/279) DNS is now flushed on starting the `zt` service to ensure dns cache is not a problem
+* [#264](https://github.com/hanzozt/desktop-edge-win/issues/264) `zt` data service no longer blocks waiting for identities to load
+* app now uses the zt_set_app_info function to report app information to controller
 
 ## Other changes:
 * none
@@ -2108,9 +2108,9 @@ This is a substantial update. Some important stability fixes have been applied f
 
 ## What's New
 * [#276](https://github.com/hanzozt/desktop-edge-win/issues/276) Updates for new CDSK eventing api
-* [#279](https://github.com/hanzozt/desktop-edge-win/issues/279) DNS is now flushed on starting the `ziti` service to ensure dns cache is not a problem
-* [#264](https://github.com/hanzozt/desktop-edge-win/issues/264) `ziti` data service no longer blocks waiting for identities to load
-* app now uses the ziti_set_app_info function to report app information to controller
+* [#279](https://github.com/hanzozt/desktop-edge-win/issues/279) DNS is now flushed on starting the `zt` service to ensure dns cache is not a problem
+* [#264](https://github.com/hanzozt/desktop-edge-win/issues/264) `zt` data service no longer blocks waiting for identities to load
+* app now uses the zt_set_app_info function to report app information to controller
 
 ## Other changes:
 * none
@@ -2126,8 +2126,8 @@ This is a substantial update. Some important stability fixes have been applied f
 # Release 1.6.28
 
 ## What's New
-* ziti-monitor service set to "Automatic (Delayed Start)". Some users have noticed the monitor service does not start on boot. This is unexpected. To try to combat this problem the monitor service is going to be set to delayed start.
-* [#291](https://github.com/hanzozt/desktop-edge-win/issues/291) ziti-monitor now attempts to collect the external ip address when submitting troubleshooting information
+* zt-monitor service set to "Automatic (Delayed Start)". Some users have noticed the monitor service does not start on boot. This is unexpected. To try to combat this problem the monitor service is going to be set to delayed start.
+* [#291](https://github.com/hanzozt/desktop-edge-win/issues/291) zt-monitor now attempts to collect the external ip address when submitting troubleshooting information
 
 ## Other changes:
 * none
@@ -2303,7 +2303,7 @@ This is a substantial update. Some important stability fixes have been applied f
 # Release 1.5.12
 
 ## What's New
-* logs condensed into a single log file - only ziti-tunneler.log files remain (cziti.logs are removed)
+* logs condensed into a single log file - only zt-tunneler.log files remain (czt.logs are removed)
 * clicking "Service Logs" will open the latest service log file. if ".log" is not mapped to a program the `${installFolder}\logs\service` folder will be opened
 * clicking "Application Logs" will open the latest UI log file. if ".log" is not mapped to a program the `${installFolder}\logs\UI` folder will be opened
 * closes [#254](https://github.com/hanzozt/desktop-edge-win/issues/254) - logs relocated to easier accessed location: "%ProgramFiles(x86)%\NetFoundry, Inc\Ziti Desktop Edge\logs"
@@ -2365,7 +2365,7 @@ The automatic update functionality works - however the termination of the UI is 
 
 ## Dependency Updates
 
-* update to ziti-tunnel-sdk-c v0.7.18 / ziti-sdk-c 0.17.20
+* update to zt-tunnel-sdk-c v0.7.18 / zt-sdk-c 0.17.20
 
 # Release 1.5.8
 
@@ -2381,7 +2381,7 @@ The automatic update functionality works - however the termination of the UI is 
 
 ## Dependency Updates
 
-* update to ziti-tunnel-sdk-c v0.7.18 / ziti-sdk-c 0.17.20
+* update to zt-tunnel-sdk-c v0.7.18 / zt-sdk-c 0.17.20
 
 # Release 1.5.7
 
@@ -2431,7 +2431,7 @@ The automatic update functionality works - however the termination of the UI is 
 * none
 
 ## Bugs fixed:
-* NRE in ziti-monitor if no subscriptions exist
+* NRE in zt-monitor if no subscriptions exist
 
 # Release 1.5.2
 
@@ -2461,7 +2461,7 @@ The automatic update functionality works - however the termination of the UI is 
 # Release 1.5.0
 
 ## What's New
-* closes [#216](https://github.com/hanzozt/desktop-edge-win/issues/216) - The big change is that the big button now will send a message to the monitor service which will have the proper rights to stop and start the data service (`ziti`).
+* closes [#216](https://github.com/hanzozt/desktop-edge-win/issues/216) - The big change is that the big button now will send a message to the monitor service which will have the proper rights to stop and start the data service (`zt`).
 
 ## Other changes:
 * Changed the default mask to /10 as to not be different
@@ -2486,11 +2486,11 @@ The automatic update functionality works - however the termination of the UI is 
 
 ## Bug Fixes
 
-* Crash related to [ziti-sdk-c #171](https://github.com/hanzozt/ziti-sdk-c/issues/171)
+* Crash related to [zt-sdk-c #171](https://github.com/hanzozt/zt-sdk-c/issues/171)
 
 ## Dependency Updates
 
-* update to ziti-tunnel-sdk-c v0.7.12
+* update to zt-tunnel-sdk-c v0.7.12
 
 # Release 1.4.2
 
@@ -2518,7 +2518,7 @@ The automatic update functionality works - however the termination of the UI is 
 
 ## Dependency Updates
 
-* update ziti-tunneler-sdk-c to 0.7.10
+* update zt-tunneler-sdk-c to 0.7.10
 
 # Release 1.4.0
 
@@ -2532,7 +2532,7 @@ The automatic update functionality works - however the termination of the UI is 
 
 ## Dependency Updates
 
-* update ziti-tunneler-sdk-c to 0.7.8
+* update zt-tunneler-sdk-c to 0.7.8
 
 # Release 1.3.12
 
@@ -2555,7 +2555,7 @@ The automatic update functionality works - however the termination of the UI is 
 
 ## What's New
 
-* Better logging in ziti-monitor. More logs at debug, a couple important ones at info
+* Better logging in zt-monitor. More logs at debug, a couple important ones at info
 * clean up a warning or two
 
 ## Bug Fixes
@@ -2593,7 +2593,7 @@ The automatic update functionality works - however the termination of the UI is 
 
 ## Dependency Updates
 
-* update ziti-tunneler-sdk-c to 0.7.4
+* update zt-tunneler-sdk-c to 0.7.4
 
 # Release 1.3.7
 
@@ -2635,7 +2635,7 @@ skipped - 1.3.6 superseded this release
 # What's New
 
 * UI: When identity detail card is open you can now drag the window similar to the main window
-* `ziti-monitor` log level changed to info by default
+* `zt-monitor` log level changed to info by default
 
 # Bug Fixes
 
@@ -2659,7 +2659,7 @@ skipped - 1.3.6 superseded this release
 
 ## What's New
 
-    * [#184](https://github.com/hanzozt/desktop-edge-win/issues/184) - Better logging. ziti-monitor logging can now be configured via file.
+    * [#184](https://github.com/hanzozt/desktop-edge-win/issues/184) - Better logging. zt-monitor logging can now be configured via file.
 
 ## Bug Fixes
 
@@ -2700,7 +2700,7 @@ skipped - 1.3.6 superseded this release
 
 * Dependency Updates
 
-  * Updated to v0.7.2 of ziti-tunneller-sdk-c
+  * Updated to v0.7.2 of zt-tunneller-sdk-c
 
 # Release 1.2.12
 
@@ -2746,7 +2746,7 @@ skipped - 1.3.6 superseded this release
   * the log level can now be changed from the UI by going to Advanced Settings -> Set Logging Level
   * the config file has been slimmed
   * the name used to start/stop the Ziti Desktop Edge Service has been made much more convenient. 
-    Now you can start and stop the service with: `net start|stop ziti` (this is the change that
+    Now you can start and stop the service with: `net start|stop zt` (this is the change that
     necessitates removing and reinstalling the application during upgrade from previous versions)
 
 # Release 1.2.6
@@ -2879,8 +2879,8 @@ skipped - 1.3.6 superseded this release
 * What's New
 
 * Bug fixes
-  * [#51](https://github.com/hanzozt/desktop-edge-win/issues/51) - cziti log would never roll over. 
-            now the cziti log rolls daily with a maximum of seven (7) log files
+  * [#51](https://github.com/hanzozt/desktop-edge-win/issues/51) - czt log would never roll over. 
+            now the czt log rolls daily with a maximum of seven (7) log files
 
 # All versions prior to 0.0.15
 

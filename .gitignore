@@ -261,13 +261,13 @@ __pycache__/
 *.pyc
 
 github_deploy_key
-ziti-tunnel-win.zip
+zt-tunnel-win.zip
 service/deps
-service/ziti.dll
+service/zt.dll
 service/libuv.dll
 Installer/build/
-Installer/ziti-tunnel-service.zip
-ziti-tunnel-service.zip
+Installer/zt-tunnel-service.zip
+zt-tunnel-service.zip
 WinSign.*
 *.p12*
 *.pfx
@@ -275,10 +275,10 @@ WinSign.*
 ADV_INST_KEY.key
 WinSign.b64
 Installer/ZitiDesktopEdge.back.aip
-ziti-edge-tunnel/deps/
-ziti-edge-tunnel/*.dll
-ziti-edge-tunnel/*.exe
-ziti-edge-tunnel/*.zip
+zt-edge-tunnel/deps/
+zt-edge-tunnel/*.dll
+zt-edge-tunnel/*.exe
+zt-edge-tunnel/*.zip
 OPENZITI_P12.b64
 Installer/zet.zip
 release-streams/local*/*

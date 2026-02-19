@@ -15,7 +15,7 @@ param(
     [bool]$revertGitAfter = $true,
     [string]$versionQualifier = "",
     [switch]$promote = $false,  # New parameter for promotion
-    [bool]$Win32Crypto = $false #used to specify which ziti edge tunnel version to pull, openssl or win32crypto-based
+    [bool]$Win32Crypto = $false #used to specify which zt edge tunnel version to pull, openssl or win32crypto-based
 )
 
 $newTimestamp = $published_at.ToString("yyyy-MM-ddTHH:mm:ssZ")

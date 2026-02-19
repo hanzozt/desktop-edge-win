@@ -1,6 +1,6 @@
 # Parameters
 param (
-    [string]$repo = "hanzozt/ziti-console", # Replace with the target GitHub repository
+    [string]$repo = "hanzozt/zt-console", # Replace with the target GitHub repository
     [string]$version # Version number in #.#.# format, or "latest" for the newest release
 )
 
@@ -60,15 +60,15 @@ try {
 }
 
 if (-not $version -or $version -eq 'latest') {
-    # Find the latest release that matches "app-ziti-console-"
-    $latestRelease = $releases | Where-Object { $_.tag_name -match "app-ziti-console-" } | Select-Object -First 1
+    # Find the latest release that matches "app-zt-console-"
+    $latestRelease = $releases | Where-Object { $_.tag_name -match "app-zt-console-" } | Select-Object -First 1
     if ($latestRelease) {
         Write-Host "Latest release found:"
         Write-Host "Name: $($latestRelease.name)"
         Write-Host "Tag: $($latestRelease.tag_name)"
         Write-Host "URL: $($latestRelease.html_url)"
 
-        $artifactPath = (Download-Artifact -tag $latestRelease.tag_name -artifactName "ziti-console.zip")
+        $artifactPath = (Download-Artifact -tag $latestRelease.tag_name -artifactName "zt-console.zip")
 		echo "Artfiact downloaded to : $artifactPath"
 		$where = (Join-Path -Path $zacDir -ChildPath $latestRelease.tag_name.Replace("app-", ""))
 		Unzip-Artifact -zipPath $artifactPath -extractTo $where
@@ -78,7 +78,7 @@ if (-not $version -or $version -eq 'latest') {
 		Write-Host "          location: ""$where"""
 		Write-Host "          indexFile: index.html"
     } else {
-        Write-Host "No releases matching 'app-ziti-console-' found."
+        Write-Host "No releases matching 'app-zt-console-' found."
     }
     exit 0
 }
@@ -90,7 +90,7 @@ if (-not ($version -match '^(\\d+)\\.(\\d+)\\.(\\d+)$')) {
 }
 
 # Find matching release
-$pattern = "app-ziti-console-v$version"
+$pattern = "app-zt-console-v$version"
 $matchingRelease = $releases | Where-Object { $_.tag_name -match $pattern }
 
 if ($matchingRelease) {
@@ -99,7 +99,7 @@ if ($matchingRelease) {
     Write-Host "Tag: $($matchingRelease.tag_name)"
     Write-Host "URL: $($matchingRelease.html_url)"
 
-    $artifactPath = Download-Artifact -tag $matchingRelease.tag_name -artifactName "ziti-console.zip"
+    $artifactPath = Download-Artifact -tag $matchingRelease.tag_name -artifactName "zt-console.zip"
 	$where = (Join-Path -Path $zacDir -ChildPath $matchingRelease.tag_name.Replace("app-", ""))
     Unzip-Artifact -zipPath $artifactPath -extractTo $where
 	

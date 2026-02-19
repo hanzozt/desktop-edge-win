@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ziti-monitor")]
+[assembly: AssemblyTitle("zt-monitor")]
 [assembly: AssemblyDescription("Ziti Monitor and Update Service")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("NetFoundry")]

@@ -62,7 +62,7 @@ namespace ZitiUpdateService {
                 // Apply config           
                 LogManager.Configuration = config;
             }
-            Logger.Info("========================= ziti-monitor started =========================");
+            Logger.Info("========================= zt-monitor started =========================");
             Logger.Info("logger initialized");
             Logger.Info("    - version   : {0}", asm.GetName().Version.ToString());
             Logger.Info("    - using file: {0}", byFile);

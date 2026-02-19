@@ -55,7 +55,7 @@ namespace ZitiDesktopEdge.ServiceClient {
         public event EventHandler<AuthenticationEvent> OnAuthenticationEvent;
 
         protected override void ShutdownEvent(StatusEvent e) {
-            Logger.Debug("Clean shutdown detected from ziti");
+            Logger.Debug("Clean shutdown detected from zt");
             ExpectedShutdown = true;
             base.ShutdownEvent(e);
         }
@@ -106,9 +106,9 @@ namespace ZitiDesktopEdge.ServiceClient {
             base.ClientDisconnected(e);
         }
 
-        // ziti edge tunnel
-        const string ipcPipe = @"ziti-edge-tunnel.sock";
-        const string eventPipe = @"ziti-edge-tunnel-event.sock";
+        // zt edge tunnel
+        const string ipcPipe = @"zt-edge-tunnel.sock";
+        const string eventPipe = @"zt-edge-tunnel-event.sock";
 
         public DataClient(string id) : base(id) {
         }
@@ -427,7 +427,7 @@ namespace ZitiDesktopEdge.ServiceClient {
             }
         }
 
-        async public Task zitiDump(string dumpPath) {
+        async public Task ztDump(string dumpPath) {
             try {
                 await sendDataClientAsync(new ZitiDumpFunction(dumpPath));
                 var rtn = await readDataClientAsync<SvcResponse>(ipcReader);
@@ -436,7 +436,7 @@ namespace ZitiDesktopEdge.ServiceClient {
                 //almost certainly a problem with the pipe - recreate the pipe...
                 //setupPipe();
                 //throw ioe;
-                Logger.Error(ioe, "Could not perform ziti dump. Unexpected error. Is ziti running?");
+                Logger.Error(ioe, "Could not perform zt dump. Unexpected error. Is zt running?");
             }
             return;
         }
@@ -449,7 +449,7 @@ namespace ZitiDesktopEdge.ServiceClient {
 
                 await sendDataClientAsync(configPayload);
                 resp = await readDataClientAsync<SvcResponse>(ipcReader);
-                Logger.Debug("config update payload is sent to the ziti tunnel");
+                Logger.Debug("config update payload is sent to the zt tunnel");
             } catch (Exception ex) {
                 //almost certainly a problem with the pipe - recreate the pipe...
                 //setupPipe();
@@ -473,7 +473,7 @@ namespace ZitiDesktopEdge.ServiceClient {
 
                 await sendDataClientAsync(frequencyPayload);
                 resp = await readDataClientAsync<SvcResponse>(ipcReader);
-                Logger.Debug("frequency update payload is sent to the ziti tunnel");
+                Logger.Debug("frequency update payload is sent to the zt tunnel");
             } catch (Exception ex) {
                 //almost certainly a problem with the pipe - recreate the pipe...
                 //setupPipe();

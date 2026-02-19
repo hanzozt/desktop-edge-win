@@ -270,13 +270,13 @@ namespace ZitiDesktopEdge {
                 if (SortWay == "Desc") services = services.Reverse().ToArray();
                 int startIndex = (Page - 1) * PerPage;
                 for (int i = startIndex; i < services.Length; i++) {
-                    ZitiService zitiSvc = services[i];
+                    ZitiService ztSvc = services[i];
                     total++;
                     if (index < PerPage) {
-                        if (zitiSvc.Name.ToLower().IndexOf(filter.ToLower()) >= 0 || zitiSvc.ToString().ToLower().IndexOf(filter.ToLower()) >= 0) {
-                            zitiSvc.TimeUpdated = _identity.LastUpdatedTime;
-                            zitiSvc.IsMfaReady = _identity.IsMFAEnabled;
-                            _services.Add(zitiSvc);
+                        if (ztSvc.Name.ToLower().IndexOf(filter.ToLower()) >= 0 || ztSvc.ToString().ToLower().IndexOf(filter.ToLower()) >= 0) {
+                            ztSvc.TimeUpdated = _identity.LastUpdatedTime;
+                            ztSvc.IsMfaReady = _identity.IsMFAEnabled;
+                            _services.Add(ztSvc);
                             index++;
                         }
                     }
@@ -569,11 +569,11 @@ namespace ZitiDesktopEdge {
                         if (SortWay == "Desc") services = services.Reverse().ToArray();
                         int startIndex = (Page - 1) * PerPage;
                         for (int i = startIndex; i < services.Length; i++) {
-                            ZitiService zitiSvc = services[i];
+                            ZitiService ztSvc = services[i];
                             if (index < PerPage) {
-                                if (zitiSvc.Name.ToLower().IndexOf(filter.ToLower()) >= 0 || zitiSvc.ToString().ToLower().IndexOf(filter.ToLower()) >= 0) {
-                                    zitiSvc.TimeUpdated = _identity.LastUpdatedTime;
-                                    ZitiServices.Add(zitiSvc);
+                                if (ztSvc.Name.ToLower().IndexOf(filter.ToLower()) >= 0 || ztSvc.ToString().ToLower().IndexOf(filter.ToLower()) >= 0) {
+                                    ztSvc.TimeUpdated = _identity.LastUpdatedTime;
+                                    ZitiServices.Add(ztSvc);
                                     index++;
                                 }
                             }

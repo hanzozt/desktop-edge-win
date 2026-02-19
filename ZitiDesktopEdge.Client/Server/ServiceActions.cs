@@ -26,7 +26,7 @@ namespace ZitiDesktopEdge.Server {
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
         private static int serviceWaitTime = 60; //one minute
 
-        private static ServiceController sc = new ServiceController("ziti");
+        private static ServiceController sc = new ServiceController("zt");
         public static string ServiceStatus() {
             try {
                 var status = sc.Status;
@@ -36,10 +36,10 @@ namespace ZitiDesktopEdge.Server {
                     //ServiceControllerStatus is reporting 'stop pending' when the service crashes or is terminated by a user
                     //this is INCORRECT as the service is dead - it is not pending. Test for the process by name and if there's
                     //still a process - cool. if NOT - send the 'stopped' message...
-                    var procs = System.Diagnostics.Process.GetProcessesByName("ziti-edge-tunnel");
+                    var procs = System.Diagnostics.Process.GetProcessesByName("zt-edge-tunnel");
                     if (procs != null && procs.Length == 1) {
-                        // if there's more than one ziti-edge-tunnel that'd be bad too but we can't account for that here
-                        Logger.Warn("ServiceControllerStatus is StopPending but there is NO ziti-edge-tunnel process! report service is stopped");
+                        // if there's more than one zt-edge-tunnel that'd be bad too but we can't account for that here
+                        Logger.Warn("ServiceControllerStatus is StopPending but there is NO zt-edge-tunnel process! report service is stopped");
                         return ServiceControllerStatus.Stopped.ToString();
                     }
                 }
@@ -51,24 +51,24 @@ namespace ZitiDesktopEdge.Server {
         }
 
         public static string StartService() {
-            Logger.Info($"request to start ziti service received... waiting up to {serviceWaitTime}s for service start...");
+            Logger.Info($"request to start zt service received... waiting up to {serviceWaitTime}s for service start...");
             sc.Start();
             sc.WaitForStatus(ServiceControllerStatus.Running, new System.TimeSpan(0, 0, serviceWaitTime));
-            Logger.Info("request to start ziti service received... complete...");
+            Logger.Info("request to start zt service received... complete...");
             return ServiceStatus();
         }
 
         public static string StopService() {
             try {
-                Logger.Info($"request to stop ziti service received... waiting up to {serviceWaitTime}s for service stop...");
+                Logger.Info($"request to stop zt service received... waiting up to {serviceWaitTime}s for service stop...");
                 sc.Stop();
                 sc.WaitForStatus(ServiceControllerStatus.Stopped, new System.TimeSpan(0, 0, serviceWaitTime));
-                Logger.Info("request to stop ziti service received... complete...");
+                Logger.Info("request to stop zt service received... complete...");
                 return ServiceStatus();
             } catch (Exception e) {
-                Logger.Error("failed to stop service using ServiceController. Attempting to find and kill the ziti process directly");
+                Logger.Error("failed to stop service using ServiceController. Attempting to find and kill the zt process directly");
 
-                var zetProcesses = Process.GetProcesses().Where(p => p.ProcessName == "ziti-edge-tunnel");
+                var zetProcesses = Process.GetProcesses().Where(p => p.ProcessName == "zt-edge-tunnel");
 
                 foreach (var process in zetProcesses) {
                     try {
@@ -86,7 +86,7 @@ namespace ZitiDesktopEdge.Server {
 
                 Logger.Info("graceful shutdown failed. Removing all NRPT rules");
                 RemoveNrptRules();
-                Logger.Info("graceful shutdown failed. Removing all ziti-tun* interfaces");
+                Logger.Info("graceful shutdown failed. Removing all zt-tun* interfaces");
                 RemoveZitiTunInterfaces();
 
                 throw e;
@@ -98,7 +98,7 @@ namespace ZitiDesktopEdge.Server {
             ProcessStartInfo nrptRuleStartInfo = new ProcessStartInfo();
             nrptRuleStartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             nrptRuleStartInfo.FileName = "cmd.exe";
-            var cmd = "Get-DnsClientNrptRule | Where { $_.Comment.StartsWith('Added by ziti-edge-tunnel') } | Remove-DnsClientNrptRule -ErrorAction SilentlyContinue -Force";
+            var cmd = "Get-DnsClientNrptRule | Where { $_.Comment.StartsWith('Added by zt-edge-tunnel') } | Remove-DnsClientNrptRule -ErrorAction SilentlyContinue -Force";
             nrptRuleStartInfo.Arguments = $"/C powershell \"{cmd}\"";
             Logger.Info("Running: {0}", nrptRuleStartInfo.Arguments);
             nrptRuleProcess.StartInfo = nrptRuleStartInfo;
@@ -111,7 +111,7 @@ namespace ZitiDesktopEdge.Server {
         }
 
         static void RemoveZitiTunInterfaces() {
-            string query = "SELECT * FROM Win32_NetworkAdapter WHERE Name LIKE 'ziti%'";
+            string query = "SELECT * FROM Win32_NetworkAdapter WHERE Name LIKE 'zt%'";
             ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);
             ManagementObjectCollection results = searcher.Get();
 

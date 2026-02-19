@@ -82,7 +82,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>..\ziti.ico</ApplicationIcon>
+    <ApplicationIcon>..\zt.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DnsClient, Version=1.7.0.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
@@ -192,11 +192,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ziti-green.ico" />
+    <Resource Include="zt-green.ico" />
     <EmbeddedResource Include="checkers\PeFile\hanzozt.rootCA.rsa.pem.txt" />
-    <Content Include="ziti-v2-new.ico" />
-    <Content Include="ziti-white.ico" />
-    <Content Include="..\ziti.ico" />
+    <Content Include="zt-v2-new.ico" />
+    <Content Include="zt-white.ico" />
+    <Content Include="..\zt.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

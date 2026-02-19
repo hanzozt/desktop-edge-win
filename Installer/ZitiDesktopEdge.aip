@@ -41,9 +41,9 @@
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPHELPTELEPHONE" Value="support@hanzozt.io"/>
     <ROW Property="ARPNOREPAIR" MultiBuildValue="AnyCPU_Release:1"/>
-    <ROW Property="ARPPRODUCTICON" Value="ziti.exe" Type="8"/>
-    <ROW Property="ARPURLINFOABOUT" Value="https://openenziti.io"/>
-    <ROW Property="AppLogoIcon" Value="applogoicon" MultiBuildValue="AnyCPU_Release:ziti.ico" Type="1" MsiKey="AppLogoIcon"/>
+    <ROW Property="ARPPRODUCTICON" Value="zt.exe" Type="8"/>
+    <ROW Property="ARPURLINFOABOUT" Value="https://openenzt.io"/>
+    <ROW Property="AppLogoIcon" Value="applogoicon" MultiBuildValue="AnyCPU_Release:zt.ico" Type="1" MsiKey="AppLogoIcon"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="NetFoundry Inc."/>
     <ROW Property="MsiLogging" MultiBuildValue="AnyCPU_Release:vp"/>
@@ -89,7 +89,7 @@
     <ROW Component="ZitiUpdateService.exe" ComponentId="{01B4F535-D4A3-44CD-BB2D-A3A905A095D6}" Directory_="APPDIR" Attributes="0" KeyPath="ZitiUpdateService.exe"/>
     <ROW Component="ZitiUpgradeSentinel.exe" ComponentId="{9C87C05E-2E44-4CF7-896D-E37030BE67CB}" Directory_="APPDIR" Attributes="0" KeyPath="ZitiUpgradeSentinel.exe"/>
     <ROW Component="wintun.dll" ComponentId="{9A0B9D43-D06F-4456-BBCF-C99A90D19D8C}" Directory_="APPDIR" Attributes="256" KeyPath="wintun.dll"/>
-    <ROW Component="zitiedgetunnel.exe" ComponentId="{53505232-48E9-44C1-B2FB-77472C1C4732}" Directory_="APPDIR" Attributes="256" KeyPath="zitiedgetunnel.exe"/>
+    <ROW Component="ztedgetunnel.exe" ComponentId="{53505232-48E9-44C1-B2FB-77472C1C4732}" Directory_="APPDIR" Attributes="256" KeyPath="ztedgetunnel.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
@@ -111,7 +111,7 @@
     <ROW File="System.Buffers.dll" Component_="System.Buffers.dll" FileName="SYSTEM~1.DLL|System.Buffers.dll" Attributes="0" SourcePath="..\ZitiUpdateService\bin\Release\System.Buffers.dll" SelfReg="false"/>
     <ROW File="QRCoder.dll" Component_="QRCoder.dll" FileName="QRCoder.dll" Attributes="0" SourcePath="..\DesktopEdge\bin\Release\QRCoder.dll" SelfReg="false"/>
     <ROW File="Microsoft.Toolkit.Uwp.Notifications.dll" Component_="Microsoft.Toolkit.Uwp.Notifications.dll" FileName="MICROS~1.DLL|Microsoft.Toolkit.Uwp.Notifications.dll" Attributes="0" SourcePath="..\DesktopEdge\bin\Release\Microsoft.Toolkit.Uwp.Notifications.dll" SelfReg="false"/>
-    <ROW File="zitiedgetunnel.exe" Component_="zitiedgetunnel.exe" FileName="ZITI-E~1.EXE|ziti-edge-tunnel.exe" Attributes="0" SourcePath="build\service\ziti-edge-tunnel.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="ztedgetunnel.exe" Component_="ztedgetunnel.exe" FileName="ZITI-E~1.EXE|zt-edge-tunnel.exe" Attributes="0" SourcePath="build\service\zt-edge-tunnel.exe" SelfReg="false" DigSign="true"/>
     <ROW File="ZitiUpgradeSentinel.exe" Component_="ZitiUpgradeSentinel.exe" FileName="UPGRAD~1.EXE|ZitiUpgradeSentinel.exe" Attributes="0" SourcePath="..\ZitiUpgradeSentinel\bin\Release\ZitiUpgradeSentinel.exe" SelfReg="false" DigSign="true"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.AiPersistentDataComponent">
@@ -129,7 +129,7 @@
     <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="251"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="AnyCPU_Release" BuildName="BuildEXE" BuildOrder="1" BuildType="0" PackageFolder="Output" PackageFileName="Ziti Desktop Edge Client-[|ProductVersion]" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\ziti.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="Ziti Desktop Edge Client-[|ProductVersion]"/>
+    <ROW BuildKey="AnyCPU_Release" BuildName="BuildEXE" BuildOrder="1" BuildType="0" PackageFolder="Output" PackageFileName="Ziti Desktop Edge Client-[|ProductVersion]" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\zt.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="Ziti Desktop Edge Client-[|ProductVersion]"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -206,7 +206,7 @@
     <ROW Name="sys_min_hot.bmp" SourcePath="&lt;AI_FRAME_COLOR&gt;sys_min_hot.bmp"/>
     <ROW Name="sys_min_inactive.bmp" SourcePath="&lt;AI_FRAME_COLOR&gt;sys_min_inactive.bmp"/>
     <ROW Name="sys_min_normal.bmp" SourcePath="&lt;AI_FRAME_COLOR&gt;sys_min_normal.bmp"/>
-    <ROW Name="ziti.ico" SourcePath="Generated Images\ziti.ico"/>
+    <ROW Name="zt.ico" SourcePath="Generated Images\zt.ico"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
     <ROW Dialog_="CustomizeDlg" Control="Text" Type="Text" X="12" Y="76" Width="423" Height="23" Attributes="196611" Text="Select which components of [ProductName] will be installed" Order="700" TextLocId="Azure.Control.Text.CustomizeDlg#Text" MsiKey="CustomizeDlg#Text"/>
@@ -300,11 +300,11 @@
     <ROW Feature_="MainFeature" Component_="System.Buffers.dll"/>
     <ROW Feature_="MainFeature" Component_="QRCoder.dll"/>
     <ROW Feature_="MainFeature" Component_="Microsoft.Toolkit.Uwp.Notifications.dll"/>
-    <ROW Feature_="MainFeature" Component_="zitiedgetunnel.exe"/>
+    <ROW Feature_="MainFeature" Component_="ztedgetunnel.exe"/>
     <ROW Feature_="MainFeature" Component_="ZitiUpgradeSentinel.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
-    <ROW Name="ziti.exe" SourcePath="..\ziti.ico" Index="0"/>
+    <ROW Name="zt.exe" SourcePath="..\zt.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
@@ -369,19 +369,19 @@
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiServConfigComponent">
-    <ROW MsiServiceConfig="ServiceName" Name="ziti-monitor" Event="1" ConfigType="3" Argument="1" Component_="ZitiUpdateService.exe"/>
+    <ROW MsiServiceConfig="ServiceName" Name="zt-monitor" Event="1" ConfigType="3" Argument="1" Component_="ZitiUpdateService.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiServConfigFailureActionsComponent">
-    <ROW MsiServiceConfigFailureActions="ServiceName" Name="ziti" Event="5" ResetPeriod="7" Actions="1[~]1[~]1" DelayActions="1[~]1[~]1" Component_="zitiedgetunnel.exe"/>
-    <ROW MsiServiceConfigFailureActions="ServiceName_1" Name="ziti-monitor" Event="5" ResetPeriod="7" Actions="1[~]1[~]1" DelayActions="1[~]1[~]1" Component_="ZitiUpdateService.exe"/>
+    <ROW MsiServiceConfigFailureActions="ServiceName" Name="zt" Event="5" ResetPeriod="7" Actions="1[~]1[~]1" DelayActions="1[~]1[~]1" Component_="ztedgetunnel.exe"/>
+    <ROW MsiServiceConfigFailureActions="ServiceName_1" Name="zt-monitor" Event="5" ResetPeriod="7" Actions="1[~]1[~]1" DelayActions="1[~]1[~]1" Component_="ZitiUpdateService.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiServCtrlComponent">
-    <ROW ServiceControl="ZitiUpdateService.exe" Name="ziti-monitor" Event="161" Wait="0" Component_="ZitiUpdateService.exe"/>
-    <ROW ServiceControl="zitiedgetunnel.exe" Name="ziti" Event="161" Wait="0" Component_="zitiedgetunnel.exe"/>
+    <ROW ServiceControl="ZitiUpdateService.exe" Name="zt-monitor" Event="161" Wait="0" Component_="ZitiUpdateService.exe"/>
+    <ROW ServiceControl="ztedgetunnel.exe" Name="zt" Event="161" Wait="0" Component_="ztedgetunnel.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiServInstComponent">
-    <ROW ServiceInstall="ZitiUpdateService.exe" Name="ziti-monitor" DisplayName="Ziti Desktop Monitor Service" ServiceType="16" StartType="2" ErrorControl="32769" Component_="ZitiUpdateService.exe" Description="Monitors and updates the Ziti Access Service"/>
-    <ROW ServiceInstall="zitiedgetunnel.exe" Name="ziti" DisplayName="Ziti Desktop Edge Service" ServiceType="16" StartType="2" ErrorControl="32769" Component_="zitiedgetunnel.exe" Description="Access your networks secured by ziti"/>
+    <ROW ServiceInstall="ZitiUpdateService.exe" Name="zt-monitor" DisplayName="Ziti Desktop Monitor Service" ServiceType="16" StartType="2" ErrorControl="32769" Component_="ZitiUpdateService.exe" Description="Monitors and updates the Ziti Access Service"/>
+    <ROW ServiceInstall="ztedgetunnel.exe" Name="zt" DisplayName="Ziti Desktop Edge Service" ServiceType="16" StartType="2" ErrorControl="32769" Component_="ztedgetunnel.exe" Description="Access your networks secured by zt"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
     <ROW Shortcut="ZitiDesktopEdge" Directory_="StartupFolder" Name="ZITIDE~2|Ziti Desktop Edge" Component_="ZitiDesktopEdge.exe" Target="[#ZitiDesktopEdge.exe]" Description="Ziti Desktop Edge configuration interface" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>

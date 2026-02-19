@@ -3,7 +3,7 @@ Output
 WinSign.p12
 *.p12
 build/
-ziti-tunnel-service.zip
+zt-tunnel-service.zip
 *.old
 AWSSigner.NET
 *back*

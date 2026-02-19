@@ -104,7 +104,7 @@ namespace ZitiDesktopEdge {
 #endif
             ExpectedLogPathRoot = Path.Combine(ExecutionDirectory, "logs");
             ExpectedLogPathUI = Path.Combine(ExpectedLogPathRoot, "UI", $"{ThisAssemblyName}.log");
-            ExpectedLogPathServices = Path.Combine(ExpectedLogPathRoot, "service", $"ziti-tunneler.log");
+            ExpectedLogPathServices = Path.Combine(ExpectedLogPathRoot, "service", $"zt-tunneler.log");
         }
 
         private void SystemEvents_DisplaySettingsChanged(object sender, EventArgs e) {
@@ -890,7 +890,7 @@ namespace ZitiDesktopEdge {
                 nextVersionStr = "checking for update";
                 Version nextVersion = GithubAPI.GetVersion(GithubAPI.GetJson(GithubAPI.ProdUrl));
                 nextVersionStr = nextVersion.ToString();
-                Version currentVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version; //fetch from ziti?
+                Version currentVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version; //fetch from zt?
 
                 int compare = currentVersion.CompareTo(nextVersion);
                 if (compare < 0) {
@@ -1518,7 +1518,7 @@ namespace ZitiDesktopEdge {
 
         private void SetNotifyIcon(string iconPrefix) {
             if (iconPrefix != "") CurrentIcon = iconPrefix;
-            string icon = "pack://application:,,/Assets/Images/ziti-" + CurrentIcon;
+            string icon = "pack://application:,,/Assets/Images/zt-" + CurrentIcon;
             if (state.UpdateAvailable) {
                 icon += "-update";
             } else {

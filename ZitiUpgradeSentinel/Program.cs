@@ -66,7 +66,7 @@ class FileWatcher {
     public static async Task WaitForStartupChange() {
         DateTime startTime = DateTime.Now;
         try {
-            using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", "ziti-edge-tunnel.sock", PipeDirection.InOut)) {
+            using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", "zt-edge-tunnel.sock", PipeDirection.InOut)) {
                 pipeClient.Connect();
                 StreamWriter writer = new StreamWriter(pipeClient);
                 StreamReader reader = new StreamReader(pipeClient);
@@ -84,7 +84,7 @@ class FileWatcher {
 
         while (true) {
             try {
-                using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", "ziti-edge-tunnel.sock", PipeDirection.InOut)) {
+                using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", "zt-edge-tunnel.sock", PipeDirection.InOut)) {
                     pipeClient.Connect();
                     StreamWriter writer = new StreamWriter(pipeClient);
                     StreamReader reader = new StreamReader(pipeClient);
@@ -130,9 +130,9 @@ class FileWatcher {
         } else if (dirs.Count < 1) {
             Log($"cannot start the UI. No ZitiDesktopEdge.exe found");
         } else {
-            var zitiFiles = Directory.GetFiles(dirs[0], "ZitiDesktopEdge.exe", SearchOption.AllDirectories);
+            var ztFiles = Directory.GetFiles(dirs[0], "ZitiDesktopEdge.exe", SearchOption.AllDirectories);
 
-            foreach (var file in zitiFiles) {
+            foreach (var file in ztFiles) {
                 Console.WriteLine($"Found ZitiDesktopEdge at: {file}");
                 using (Process process = new Process()) {
                     process.StartInfo.FileName = file;

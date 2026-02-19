@@ -95,7 +95,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>..\ziti.ico</ApplicationIcon>
+    <ApplicationIcon>..\zt.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationFramework.Aero2" />
@@ -391,11 +391,11 @@
     <Resource Include="Assets\Images\logs.png" />
     <Resource Include="Assets\Images\wrench.png" />
     <Resource Include="Assets\Images\detach.png" />
-    <Resource Include="Assets\Images\ziti-green.ico" />
+    <Resource Include="Assets\Images\zt-green.ico" />
     <Resource Include="Assets\Images\Ziti-Green.png" />
-    <Resource Include="Assets\Images\ziti-red.ico" />
+    <Resource Include="Assets\Images\zt-red.ico" />
     <Resource Include="Assets\Images\Ziti-Red.png" />
-    <Resource Include="Assets\Images\ziti-white.ico">
+    <Resource Include="Assets\Images\zt-white.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Images\Ziti-White.png" />
@@ -499,24 +499,24 @@
     <Resource Include="Assets\Images\lockout.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Images\ziti-green-timer.png" />
-    <Resource Include="Assets\Images\ziti-red-timer.png" />
-    <Resource Include="Assets\Images\ziti-white-timer.png" />
+    <Resource Include="Assets\Images\zt-green-timer.png" />
+    <Resource Include="Assets\Images\zt-red-timer.png" />
+    <Resource Include="Assets\Images\zt-white-timer.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Images\ziti-white-mfa.ico" />
-    <Resource Include="Assets\Images\ziti-white-mfa.png" />
-    <Resource Include="Assets\Images\ziti-white-timer.ico" />
+    <Resource Include="Assets\Images\zt-white-mfa.ico" />
+    <Resource Include="Assets\Images\zt-white-mfa.png" />
+    <Resource Include="Assets\Images\zt-white-timer.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Images\ziti-red-mfa.ico" />
-    <Resource Include="Assets\Images\ziti-red-mfa.png" />
-    <Resource Include="Assets\Images\ziti-red-timer.ico" />
+    <Resource Include="Assets\Images\zt-red-mfa.ico" />
+    <Resource Include="Assets\Images\zt-red-mfa.png" />
+    <Resource Include="Assets\Images\zt-red-timer.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Images\ziti-green-mfa.ico" />
-    <Resource Include="Assets\Images\ziti-green-mfa.png" />
-    <Resource Include="Assets\Images\ziti-green-timer.ico" />
+    <Resource Include="Assets\Images\zt-green-mfa.ico" />
+    <Resource Include="Assets\Images\zt-green-mfa.png" />
+    <Resource Include="Assets\Images\zt-green-timer.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\processing.png" />
@@ -524,8 +524,8 @@
   <ItemGroup>
     <Resource Include="Assets\Images\ext-auth-ok.png" />
     <Resource Include="Assets\Images\ext-auth-needed.png" />
-    <Resource Include="ziti-v2.ico" />
-    <Content Include="..\ziti.ico" />
+    <Resource Include="zt-v2.ico" />
+    <Content Include="..\zt.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

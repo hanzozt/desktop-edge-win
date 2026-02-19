@@ -1,4 +1,4 @@
-name: mattermost-ziti-webhook
+name: mattermost-zt-webhook
 on:
   issues:
     types: [opened, closed]
@@ -15,17 +15,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  mattermost-ziti-webhook:
+  mattermost-zt-webhook:
     runs-on: ubuntu-latest
     name: POST Webhook
     steps:
-    - uses: hanzozt/ziti-mattermost-action-py@v1
+    - uses: hanzozt/zt-mattermost-action-py@v1
       if: |
         github.repository_owner == 'hanzozt'
         && ((github.event_name != 'pull_request_review')
         || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved'))
       with:
-        zitiId: ${{ secrets.ZITI_MATTERMOST_IDENTITY }}
+        ztId: ${{ secrets.ZITI_MATTERMOST_IDENTITY }}
         webhookUrl: ${{ secrets.ZHOOK_URL_DEV_NOTIFICATIONS }}
         eventJson: ${{ toJson(github.event) }}
         senderUsername: "GitHubZ"

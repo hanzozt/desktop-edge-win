@@ -85,7 +85,7 @@ containing two entries:
 }
 ```
 
-Updating the file will require administrator rights as the file is in a protected folder. After updating, the `ziti-monitor`
+Updating the file will require administrator rights as the file is in a protected folder. After updating, the `zt-monitor`
 service will need to be restarted for the setting to take effect. A restart of the machine is the easiest way to ensure the
 serivce is restarted. This process could be scripted easily enough, no script exists in the Hanzo ZT project at this time to
 manage this file in any automatic fashion, doing so is currently out of scope of the project.
@@ -118,7 +118,7 @@ Here is a brief transcript of the emails returned from support along with the st
 
 ### Response after submitting the exe for review
 
-We have reviewed the reported application "ziti.desktop.edge.client-x.y.z.exe" and confirm that it is clean. 
+We have reviewed the reported application "zt.desktop.edge.client-x.y.z.exe" and confirm that it is clean. 
 Accordingly we have adjusted the SmartScreen ratings to address this issue. 
 Now we can confirm that there will be no SmartScreen warning on the file. 
 

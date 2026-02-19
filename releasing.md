@@ -76,10 +76,10 @@ Example:
 ```
 cat .\deps-info.txt
 
-Dependencies from ziti-edge-tunnel:
+Dependencies from zt-edge-tunnel:
 ---------------------------------------------
-* ziti-tunneler: v1.7.3
-* ziti-sdk:      1.7.4
+* zt-tunneler: v1.7.3
+* zt-sdk:      1.7.4
 * tlsuv:         v0.36.4[OpenSSL 3.5.0 8 Apr 2025]
 ```
 

@@ -95,10 +95,10 @@ These commands assume you're using Windows Sandbox. If you're using a VM, there 
         certutil -addstore CA "c:\offline\crl\hanzozt.crl"
         certutil -addstore root "C:\offline\hanzoztCA.pem"
 
-1. restart Edge if open, restart the ziti-monitor to pick up certificate-related changes:
+1. restart Edge if open, restart the zt-monitor to pick up certificate-related changes:
 
-        net stop ziti-monitor
-        net start ziti-monitor
+        net stop zt-monitor
+        net start zt-monitor
 
 1. start a simple Python server delivering the content from `c:\offline\` by running (assuming `py` is on your path)
 

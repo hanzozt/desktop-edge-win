@@ -6,7 +6,7 @@
     [bool]$jsonOnly = $false,
     [bool]$revertGitAfter = $true,
     [string]$versionQualifier = "",
-    [bool]$Win32Crypto = $false #used to specify which ziti edge tunnel version to pull, openssl or win32crypto-based
+    [bool]$Win32Crypto = $false #used to specify which zt edge tunnel version to pull, openssl or win32crypto-based
 )
 
 $ErrorActionPreference = "Stop"
@@ -57,11 +57,11 @@ if($null -eq $env:ZITI_EDGE_TUNNEL_BUILD) {
     }
 
     if (Test-Path ${destination} -PathType Container) {
-        Write-Host -ForegroundColor Yellow "ziti-edge-tunnel.zip exists and won't be downloaded again: ${destination}"
+        Write-Host -ForegroundColor Yellow "zt-edge-tunnel.zip exists and won't be downloaded again: ${destination}"
     } else {
-        echo "========================== fetching ziti-edge-tunnel =========================="
-        $zet_dl="https://github.com/hanzozt/ziti-tunnel-sdk-c/releases/download/${ZITI_EDGE_TUNNEL_VERSION}/ziti-edge-tunnel-Windows_x86_64${versionQualifier}.zip"
-        echo "Beginning to download ziti-edge-tunnel from ${zet_dl} to ${destination}"
+        echo "========================== fetching zt-edge-tunnel =========================="
+        $zet_dl="https://github.com/hanzozt/zt-tunnel-sdk-c/releases/download/${ZITI_EDGE_TUNNEL_VERSION}/zt-edge-tunnel-Windows_x86_64${versionQualifier}.zip"
+        echo "Beginning to download zt-edge-tunnel from ${zet_dl} to ${destination}"
         echo ""
         try {
             $response = Invoke-WebRequest $zet_dl -OutFile "${destination}" -ErrorAction Stop
@@ -72,10 +72,10 @@ if($null -eq $env:ZITI_EDGE_TUNNEL_BUILD) {
         }
     }
 } else {
-    echo "========================== using locally defined ziti-edge-tunnel =========================="
+    echo "========================== using locally defined zt-edge-tunnel =========================="
     $zet_dl="${env:ZITI_EDGE_TUNNEL_BUILD}"
 
-    echo "Using ziti-edge-tunnel declared from ${zet_dl}"
+    echo "Using zt-edge-tunnel declared from ${zet_dl}"
     echo ""
     if ($SourcePath -match "^https?://") {
         $response = Invoke-WebRequest -Uri "${zet_dl}" -OutFile "${destination}"
@@ -114,7 +114,7 @@ if($unzip) {
     echo "  FROM: ${zet_dl}\*"
     echo "    TO: ${buildPath}\service\"
     $response = Copy-Item -Path "${zet_dl}\wintun.dll" -Destination "${buildPath}\service\wintun.dll" -ErrorAction Stop -Force
-    $response = Copy-Item -Path "${zet_dl}\ziti-edge-tunnel.exe" -Destination "${buildPath}\service\ziti-edge-tunnel.exe" -ErrorAction Stop -Force
+    $response = Copy-Item -Path "${zet_dl}\zt-edge-tunnel.exe" -Destination "${buildPath}\service\zt-edge-tunnel.exe" -ErrorAction Stop -Force
 }
 
 echo "========================== building and moving the custom signing tool =========================="
@@ -159,13 +159,13 @@ echo "Assembling installer using AdvancedInstaller at: $ADVINST $action $ADVPROJ
 & $ADVINST $action $ADVPROJECT
 
 $gituser=$(git config user.name)
-if($gituser -eq "ziti-ci") {
+if($gituser -eq "zt-ci") {
   echo "detected user [${gituser}]"
   git add DesktopEdge/Properties/AssemblyInfo.cs ZitiDesktopEdge.Client/Properties/AssemblyInfo.cs ZitiUpdateService/Properties/AssemblyInfo.cs Installer/ZitiDesktopEdge.aip
-  git commit -m "committing any version changes via ziti-ci"
+  git commit -m "committing any version changes via zt-ci"
   git push
 } else {
-  echo "detected user [${gituser}] which is not ziti-ci - skipping installer commit"
+  echo "detected user [${gituser}] which is not zt-ci - skipping installer commit"
 }
 
 $timeout = 1  # Set timeout in seconds
@@ -216,10 +216,10 @@ if($revertGitAfter) {
 $log = ".\deps-info${versionQualifier}.txt"
 
 "" | Out-File $log
-"Dependencies from ziti-edge-tunnel:" | Out-File $log -Append
+"Dependencies from zt-edge-tunnel:" | Out-File $log -Append
 "---------------------------------------------" | Out-File $log -Append
 
-& '.\Installer\build\service\ziti-edge-tunnel.exe' version -v | ForEach-Object {
+& '.\Installer\build\service\zt-edge-tunnel.exe' version -v | ForEach-Object {
     if ($_ -notmatch "StartServiceCtrlDispatcher failed") {
         "* $_" | Out-File $log -Append
     }

@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       zet:
-        description: 'A link to a ziti-edge-tunnel to use'
+        description: 'A link to a zt-edge-tunnel to use'
         required: false
-        default: 'https://github.com/hanzozt/ziti/releases'
+        default: 'https://github.com/hanzozt/zt/releases'
   push:
     branches:
       - main
@@ -77,11 +77,11 @@ jobs:
         run: |
           .\Installer\reg.ps1 -key "${env:ADV_INST_KEY}"
       - if: github.ref == 'refs/heads/release-next'
-        name: Install ziti-ci
-        uses: netfoundry/ziti-ci@v1
+        name: Install zt-ci
+        uses: netfoundry/zt-ci@v1
       - if: github.ref == 'refs/heads/release-next'
-        name: Configure ziti-ci
-        run: C:\Users\runneradmin\go\bin\ziti-ci configure-git
+        name: Configure zt-ci
+        run: C:\Users\runneradmin\go\bin\zt-ci configure-git
       - name: Build UI and Assemble Installer
         shell: pwsh
         env:

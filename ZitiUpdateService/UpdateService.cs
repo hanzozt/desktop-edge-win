@@ -112,7 +112,7 @@ namespace ZitiUpdateService {
             svr.SetAutomaticUpdateDisabled = SetAutomaticUpdateDisabled;
             svr.SetAutomaticUpdateURL = SetAutomaticUpdateURL;
 
-            string assemblyVersionStr = Assembly.GetExecutingAssembly().GetName().Version.ToString(); //fetch from ziti?
+            string assemblyVersionStr = Assembly.GetExecutingAssembly().GetName().Version.ToString(); //fetch from zt?
             assemblyVersion = new Version(assemblyVersionStr);
             asmDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             updateFolder = Path.Combine(asmDir, "updates");
@@ -503,7 +503,7 @@ namespace ZitiUpdateService {
 
         protected override void OnStart(string[] args) {
             Logger.Debug("args: {0}", args);
-            Logger.Info("ziti-monitor service is starting");
+            Logger.Info("zt-monitor service is starting");
 
             var logs = Path.Combine(exeLocation, "logs");
             addLogsFolder(exeLocation);
@@ -518,7 +518,7 @@ namespace ZitiUpdateService {
             AccessUtils.GrantAccessToFile(Path.Combine(exeLocation, "ZitiDesktopEdge-log.config")); //allow anyone to change the log file config
 
             zetHealthcheck.Interval = zetHealthcheckInterval * 1000;
-            zetHealthcheck.Elapsed += zitiEdgeTunnelAlivenessCheck;
+            zetHealthcheck.Elapsed += ztEdgeTunnelAlivenessCheck;
 
             Logger.Info("starting ipc server");
             ipcServer = svr.startIpcServerAsync(onIpcClientAsync);
@@ -532,25 +532,25 @@ namespace ZitiUpdateService {
                     SetupServiceWatchers();
                 });
             }
-            Logger.Info("ziti-monitor service is initialized and running");
+            Logger.Info("zt-monitor service is initialized and running");
             base.OnStart(args);
         }
 
-        private void zitiEdgeTunnelAlivenessCheck(object sender, ElapsedEventArgs e) {
+        private void ztEdgeTunnelAlivenessCheck(object sender, ElapsedEventArgs e) {
             bool succeeded = false;
             try {
                 if (zetSemaphore.Wait(TimeSpan.FromSeconds(zetHealthcheckInterval))) {
                     zetSemaphoreName = $"acquired at: {DateTime.UtcNow}";
-                    Logger.Trace("ziti-edge-tunnel aliveness check starts, zetSemaphore lock acquired");
+                    Logger.Trace("zt-edge-tunnel aliveness check starts, zetSemaphore lock acquired");
                     dataClient.GetStatusAsync().Wait();
-                    Logger.Trace("ziti-edge-tunnel aliveness check {} ends successfully", zetSemaphoreName);
+                    Logger.Trace("zt-edge-tunnel aliveness check {} ends successfully", zetSemaphoreName);
                     succeeded = true;
                 } else {
-                    Logger.Trace("ziti-edge-tunnel aliveness check {} semaphore could not be aquired", zetSemaphoreName);
+                    Logger.Trace("zt-edge-tunnel aliveness check {} semaphore could not be aquired", zetSemaphoreName);
                 }
             }
             catch (Exception ex) {
-                Logger.Error("ziti-edge-tunnel aliveness check {} ended exceptionally. released semaphore but not resetting counter", zetSemaphoreName);
+                Logger.Error("zt-edge-tunnel aliveness check {} ended exceptionally. released semaphore but not resetting counter", zetSemaphoreName);
                 zetSemaphore.Release();
                 Logger.Error(ex);
             }
@@ -562,20 +562,20 @@ namespace ZitiUpdateService {
                 zetSemaphoreName = "unset";
             } else {
                 Interlocked.Add(ref zetFailedCheckCounter, 1);
-                Logger.Warn("ziti-edge-tunnel aliveness check {} appears blocked and has been for {0} times. AlivenessChecksBeforeAction:{1}", zetSemaphoreName, zetFailedCheckCounter, CurrentSettings.AlivenessChecksBeforeAction);
+                Logger.Warn("zt-edge-tunnel aliveness check {} appears blocked and has been for {0} times. AlivenessChecksBeforeAction:{1}", zetSemaphoreName, zetFailedCheckCounter, CurrentSettings.AlivenessChecksBeforeAction);
                 if (CurrentSettings.AlivenessChecksBeforeAction > 0) {
                     if (zetFailedCheckCounter > CurrentSettings.AlivenessChecksBeforeAction) {
                         disableHealthCheck();
-                        //after 'n' failures, just terminate ziti-edge-tunnel
+                        //after 'n' failures, just terminate zt-edge-tunnel
                         Interlocked.Exchange(ref zetFailedCheckCounter, 0); //reset the counter back to 0
                         Logger.Debug("status call failed, reset to 0 and zetSemaphore {} released", zetSemaphoreName);
                         zetSemaphoreName = "unset";
                         zetSemaphore.Release();
 
-                        Logger.Warn("forcefully stopping ziti-edge-tunnel as it has been blocked for too long");
-                        stopProcessForcefully("ziti-edge-tunnel", "data service [ziti]");
+                        Logger.Warn("forcefully stopping zt-edge-tunnel as it has been blocked for too long");
+                        stopProcessForcefully("zt-edge-tunnel", "data service [zt]");
 
-                        Logger.Info("immediately restarting ziti-edge-tunnel");
+                        Logger.Info("immediately restarting zt-edge-tunnel");
                         ServiceActions.StartService(); //attempt to start the service
                     }
                 }
@@ -629,37 +629,37 @@ namespace ZitiUpdateService {
         }
 
         protected override void OnStop() {
-            Logger.Info("ziti-monitor OnStop was called");
+            Logger.Info("zt-monitor OnStop was called");
             base.OnStop();
         }
 
         protected override void OnPause() {
-            Logger.Info("ziti-monitor OnPause was called");
+            Logger.Info("zt-monitor OnPause was called");
             base.OnPause();
         }
 
         protected override void OnShutdown() {
-            Logger.Info("ziti-monitor OnShutdown was called");
+            Logger.Info("zt-monitor OnShutdown was called");
             base.OnShutdown();
         }
 
         protected override void OnContinue() {
-            Logger.Info("ziti-monitor OnContinue was called");
+            Logger.Info("zt-monitor OnContinue was called");
             base.OnContinue();
         }
 
         protected override void OnCustomCommand(int command) {
-            Logger.Info("ziti-monitor OnCustomCommand was called {0}", command);
+            Logger.Info("zt-monitor OnCustomCommand was called {0}", command);
             base.OnCustomCommand(command);
         }
 
         protected override void OnSessionChange(SessionChangeDescription changeDescription) {
-            Logger.Info("ziti-monitor OnSessionChange was called {0}", changeDescription);
+            Logger.Info("zt-monitor OnSessionChange was called {0}", changeDescription);
             base.OnSessionChange(changeDescription);
         }
 
         protected override bool OnPowerEvent(PowerBroadcastStatus powerStatus) {
-            Logger.Info("ziti-monitor OnPowerEvent was called {0}", powerStatus);
+            Logger.Info("zt-monitor OnPowerEvent was called {0}", powerStatus);
             if (powerStatus == PowerBroadcastStatus.Suspend) {
                 // when going to sleep, make sure the healthcheck is disabled or accounts for going to sleep
                 disableHealthCheck();
@@ -705,13 +705,13 @@ namespace ZitiUpdateService {
         }
 
         private void cleanOldLogs(string whereToScan) {
-            //this function will be removed in the future. it's here to clean out the old ziti-monitor*log files that
+            //this function will be removed in the future. it's here to clean out the old zt-monitor*log files that
             //were there before the 1.5.0 release
             try {
                 Logger.Info("Scanning for stale logs");
                 foreach (var f in Directory.EnumerateFiles(whereToScan)) {
                     FileInfo logFile = new FileInfo(f);
-                    if (logFile.Name.StartsWith("ziti-monitor.") && logFile.Name.EndsWith(".log")) {
+                    if (logFile.Name.StartsWith("zt-monitor.") && logFile.Name.EndsWith(".log")) {
                         Logger.Info("removing old log file: " + logFile.Name);
                         logFile.Delete();
                     }
@@ -898,25 +898,25 @@ namespace ZitiUpdateService {
         }
 
         private void StopZiti() {
-            Logger.Info("Stopping the ziti service...");
-            controller = ServiceController.GetServices().FirstOrDefault(s => s.ServiceName == "ziti");
+            Logger.Info("Stopping the zt service...");
+            controller = ServiceController.GetServices().FirstOrDefault(s => s.ServiceName == "zt");
             bool cleanStop = false;
             if (controller != null && controller.Status != ServiceControllerStatus.Stopped) {
                 try {
                     controller.Stop();
-                    Logger.Debug("Waiting for the ziti service to stop.");
+                    Logger.Debug("Waiting for the zt service to stop.");
                     controller.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromSeconds(30));
-                    Logger.Debug("The ziti service was stopped successfully.");
+                    Logger.Debug("The zt service was stopped successfully.");
                     cleanStop = true;
                 } catch (Exception e) {
                     Logger.Error(e, "Timeout while trying to stop service!");
                 }
             } else {
-                Logger.Debug("The ziti has ALREADY been stopped successfully.");
+                Logger.Debug("The zt has ALREADY been stopped successfully.");
             }
             if (!cleanStop) {
-                Logger.Debug("Stopping ziti-edge-tunnel forcefully.");
-                stopProcessForcefully("ziti-edge-tunnel", "data service [ziti]");
+                Logger.Debug("Stopping zt-edge-tunnel forcefully.");
+                stopProcessForcefully("zt-edge-tunnel", "data service [zt]");
             }
         }
 
@@ -937,7 +937,7 @@ namespace ZitiUpdateService {
 
                 foreach (Process worker in workers) {
                     try {
-                        MiniDump.CreateMemoryDump(worker, Path.Combine(logLocation, "ziti-edge-tunnel.stalled.dmp"));
+                        MiniDump.CreateMemoryDump(worker, Path.Combine(logLocation, "zt-edge-tunnel.stalled.dmp"));
                         Logger.Info("Killing: {0}", worker);
                         if (!worker.CloseMainWindow()) {
                             //don't care right now because when called on the UI it just gets 'hidden'
@@ -1003,9 +1003,9 @@ namespace ZitiUpdateService {
             if (zetHealthcheck.Enabled) {
                 zetHealthcheck.Enabled = true;
                 zetHealthcheck.Stop();
-                Logger.Info("ziti-edge-tunnel health check disabled");
+                Logger.Info("zt-edge-tunnel health check disabled");
             } else {
-                Logger.Info("ziti-edge-tunnel health check already disabled");
+                Logger.Info("zt-edge-tunnel health check already disabled");
             }
         }
 
@@ -1013,14 +1013,14 @@ namespace ZitiUpdateService {
             if (!zetHealthcheck.Enabled) {
                 zetHealthcheck.Enabled = false;
                 zetHealthcheck.Start();
-                Logger.Info("ziti-edge-tunnel health check enabled");
+                Logger.Info("zt-edge-tunnel health check enabled");
             } else {
-                Logger.Info("ziti-edge-tunnel health check already enabled");
+                Logger.Info("zt-edge-tunnel health check already enabled");
             }
             /* monitoring thread needs more testing
             Thread monitoringThread = new Thread(() =>
             {
-                var monitor = new MinidumpMonitor("ziti-edge-tunnel");
+                var monitor = new MinidumpMonitor("zt-edge-tunnel");
                 monitor.StartMonitoring();
             });
 

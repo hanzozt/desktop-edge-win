@@ -5,7 +5,7 @@
 DNS or the "Domain Name System" is basically how a computer locates another computer/system/resource on a network.
 [Cloudflare](https://www.cloudflare.com/learning/dns/what-is-dns/) refers to it as the "phonebook of the Internet".
 DNS makes it easy for a human to remember the address of a resource which should be reachable by the network the 
-computer is connected to. For example if you were to point your browser to https://ziti.dev some DNS server would
+computer is connected to. For example if you were to point your browser to https://zt.dev some DNS server would
 return the [IP address](https://en.wikipedia.org/wiki/IP_address) that represents this name (currently: 162.241.224.35)
 DNS is another example of something which seems simple at first but in reality is shockingly complex. 
 This page will attempt to inform you about how the Ziti Desktop Edge for Windows works and interacts with DNS.
@@ -18,7 +18,7 @@ so that a human can enter a well-known name and expect to be able to access the 
 
 In order to interact with DNS the Ziti Desktop Edge for Windows will start a small DNS server of its own. The purpose
 of this DNS server is to allow DNS requests made by Windows to be sent to the Ziti Desktop Edge for Windows. There, these
-DNS requests are used to identify the [Ziti Service](https://hanzozt.github.io/ziti/services/overview.html?tabs=create-service-ui)
+DNS requests are used to identify the [Ziti Service](https://hanzozt.github.io/zt/services/overview.html?tabs=create-service-ui)
 which to be intercepted. If a match is found the associated IPv4 address is returned that corresponds to the intercepted 
 Ziti Service.
 
@@ -117,12 +117,12 @@ for Windows.
 
 ### Subdomain Example
 
-Consider a Ziti Service configured to intercept `my-server.ziti`. In order for the Ziti Desktop Edge for Windows to 
+Consider a Ziti Service configured to intercept `my-server.zt`. In order for the Ziti Desktop Edge for Windows to 
 resolve a DNS request sent to it, it must match exactly. In this example the following queries would produce no matches:
 
-* www.my-server.ziti
-* web.my-server.ziti
-* anything.else.my-server.ziti
+* www.my-server.zt
+* web.my-server.zt
+* anything.else.my-server.zt
 
 ## Other Important Notes
 

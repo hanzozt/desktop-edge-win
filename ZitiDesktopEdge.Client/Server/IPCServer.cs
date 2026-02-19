@@ -28,8 +28,8 @@ using ZitiDesktopEdge.DataStructures;
 
 namespace ZitiDesktopEdge.Server {
     public class IPCServer {
-        public const string PipeName = @"Hanzo ZT\ziti-monitor\ipc";
-        public const string EventPipeName = @"Hanzo ZT\ziti-monitor\events";
+        public const string PipeName = @"Hanzo ZT\zt-monitor\ipc";
+        public const string EventPipeName = @"Hanzo ZT\zt-monitor\events";
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
         private static int BUFFER_SIZE = 16 * 1024;
@@ -131,7 +131,7 @@ namespace ZitiDesktopEdge.Server {
                         try {
                             await handleEventClientAsync(eventPipeServer, onClient);
                         } catch (Exception icpe) {
-                            if (icpe.Message.StartsWith("Service ziti was not found on computer")) {
+                            if (icpe.Message.StartsWith("Service zt was not found on computer")) {
                                 //ignore this for now...
                             } else {
                                 Logger.Error(icpe, "Unexpected error in handleEventClientAsync");
@@ -211,7 +211,7 @@ namespace ZitiDesktopEdge.Server {
                         if (ae.Action == "Force") {
                             // attempt to forcefully find the process and terminate it...
                             Logger.Warn("User has requested a FORCEFUL termination of the service. It must be stuck. Current status: {0}", ServiceActions.ServiceStatus());
-                            var procs = System.Diagnostics.Process.GetProcessesByName("ziti-edge-tunnel");
+                            var procs = System.Diagnostics.Process.GetProcessesByName("zt-edge-tunnel");
                             if (procs == null || procs.Length == 0) {
                                 Logger.Error("Process not found! Cannot terminate!");
                                 rr.Code = -20;
