@@ -193,7 +193,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ziti-green.ico" />
-    <EmbeddedResource Include="checkers\PeFile\openziti.rootCA.rsa.pem.txt" />
+    <EmbeddedResource Include="checkers\PeFile\hanzozt.rootCA.rsa.pem.txt" />
     <Content Include="ziti-v2-new.ico" />
     <Content Include="ziti-white.ico" />
     <Content Include="..\ziti.ico" />

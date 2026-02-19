@@ -18,7 +18,7 @@ so that a human can enter a well-known name and expect to be able to access the 
 
 In order to interact with DNS the Ziti Desktop Edge for Windows will start a small DNS server of its own. The purpose
 of this DNS server is to allow DNS requests made by Windows to be sent to the Ziti Desktop Edge for Windows. There, these
-DNS requests are used to identify the [Ziti Service](https://openziti.github.io/ziti/services/overview.html?tabs=create-service-ui)
+DNS requests are used to identify the [Ziti Service](https://hanzozt.github.io/ziti/services/overview.html?tabs=create-service-ui)
 which to be intercepted. If a match is found the associated IPv4 address is returned that corresponds to the intercepted 
 Ziti Service.
 

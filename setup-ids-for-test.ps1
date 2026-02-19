@@ -311,11 +311,11 @@ function createNormalUsers {
 }
 
 function createExternalJwtEntities {
-    $extJwtSignerRoot = "https://keycloak.zrok.clint.demo.openziti.org:8446/realms/zitirealm"
+    $extJwtSignerRoot = "https://keycloak.zrok.clint.demo.hanzozt.org:8446/realms/zitirealm"
     $extJwtDiscoveryEndpoint = "$extJwtSignerRoot/.well-known/openid-configuration"
     $extJwtClaimsProp = "email"
-    $extJwtAudience = "openziti"
-    $extJwtClientId = "openziti-client"
+    $extJwtAudience = "hanzozt"
+    $extJwtClientId = "hanzozt-client"
     $extJwtAuthUrl = "$extJwtSignerRoot"
     $extJwtScopes = "openid,profile,email"
 

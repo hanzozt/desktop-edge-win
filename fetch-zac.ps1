@@ -1,6 +1,6 @@
 # Parameters
 param (
-    [string]$repo = "openziti/ziti-console", # Replace with the target GitHub repository
+    [string]$repo = "hanzozt/ziti-console", # Replace with the target GitHub repository
     [string]$version # Version number in #.#.# format, or "latest" for the newest release
 )
 

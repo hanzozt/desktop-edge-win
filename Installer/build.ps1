@@ -1,6 +1,6 @@
 ﻿param(
     [string]$version,
-    [string]$url = "https://github.com/openziti/desktop-edge-win/releases/download/",
+    [string]$url = "https://github.com/hanzozt/desktop-edge-win/releases/download/",
     [string]$stream = "beta",
     [datetime]$published_at = (Get-Date -Format "yyyy-MM-ddTHH:mm:ssZ"),
     [bool]$jsonOnly = $false,
@@ -60,7 +60,7 @@ if($null -eq $env:ZITI_EDGE_TUNNEL_BUILD) {
         Write-Host -ForegroundColor Yellow "ziti-edge-tunnel.zip exists and won't be downloaded again: ${destination}"
     } else {
         echo "========================== fetching ziti-edge-tunnel =========================="
-        $zet_dl="https://github.com/openziti/ziti-tunnel-sdk-c/releases/download/${ZITI_EDGE_TUNNEL_VERSION}/ziti-edge-tunnel-Windows_x86_64${versionQualifier}.zip"
+        $zet_dl="https://github.com/hanzozt/ziti-tunnel-sdk-c/releases/download/${ZITI_EDGE_TUNNEL_VERSION}/ziti-edge-tunnel-Windows_x86_64${versionQualifier}.zip"
         echo "Beginning to download ziti-edge-tunnel from ${zet_dl} to ${destination}"
         echo ""
         try {
@@ -192,9 +192,9 @@ if($null -eq $env:OPENZITI_P12_PASS_2024) {
     echo "Not calling signtool - env:OPENZITI_P12_PASS_2024 is not set"
     echo ""
 } else {
-    echo "adding additional signature to executable with openziti.org signing certificate"
-    echo "Using ${SIGNTOOL} to sign executable with the additional OpenZiti signature: ${exeAbsPath}"
-    & "$SIGNTOOL" sign /f "${scriptPath}\openziti_2024.p12" /p "${env:OPENZITI_P12_PASS_2024}" /tr http://ts.ssl.com /fd sha512 /td sha512 /as "${exeAbsPath}"
+    echo "adding additional signature to executable with hanzozt.org signing certificate"
+    echo "Using ${SIGNTOOL} to sign executable with the additional Hanzo ZT signature: ${exeAbsPath}"
+    & "$SIGNTOOL" sign /f "${scriptPath}\hanzozt_2024.p12" /p "${env:OPENZITI_P12_PASS_2024}" /tr http://ts.ssl.com /fd sha512 /td sha512 /as "${exeAbsPath}"
 }
 
 (Get-FileHash "${exeAbsPath}").Hash > "${scriptPath}\Output\Ziti Desktop Edge Client-${version}.exe.sha256"

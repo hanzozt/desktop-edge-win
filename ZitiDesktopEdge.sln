@@ -63,7 +63,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "offline-upgrades", "offline
 		offline-upgrades\san.cnf = offline-upgrades\san.cnf
 	EndProjectSection
 	ProjectSection(FolderGlobals) = preProject
-		D_5_4git_4github_4openziti_4desktop-edge-win_4offline-upgrades_4offline_1json__JsonSchema = https://alec016.github.io/Custom-Machinery/Json%20Schema/src/main/resources/schemas/custom_machinery_recipe.json
+		D_5_4git_4github_4hanzozt_4desktop-edge-win_4offline-upgrades_4offline_1json__JsonSchema = https://alec016.github.io/Custom-Machinery/Json%20Schema/src/main/resources/schemas/custom_machinery_recipe.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "example", "example", "{BE790FD7-A387-4452-A04B-3044E3DFFA49}"

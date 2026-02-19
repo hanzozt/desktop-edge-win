@@ -12,7 +12,7 @@ httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
 
 # Create SSL context and load the server certificate and key
 context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-context.load_cert_chain(certfile="c:/offline/openziti_server.crt", keyfile="c:/offline/openziti_server.key")
+context.load_cert_chain(certfile="c:/offline/hanzozt_server.crt", keyfile="c:/offline/hanzozt_server.key")
 
 # Wrap the server socket with SSL
 httpd.socket = context.wrap_socket(httpd.socket, server_side=True)

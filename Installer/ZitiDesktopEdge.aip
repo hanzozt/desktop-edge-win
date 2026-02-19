@@ -39,7 +39,7 @@
     <ROW Property="AI_ThemeStyle" Value="head" MsiKey="AI_ThemeStyle"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
-    <ROW Property="ARPHELPTELEPHONE" Value="support@openziti.io"/>
+    <ROW Property="ARPHELPTELEPHONE" Value="support@hanzozt.io"/>
     <ROW Property="ARPNOREPAIR" MultiBuildValue="AnyCPU_Release:1"/>
     <ROW Property="ARPPRODUCTICON" Value="ziti.exe" Type="8"/>
     <ROW Property="ARPURLINFOABOUT" Value="https://openenziti.io"/>

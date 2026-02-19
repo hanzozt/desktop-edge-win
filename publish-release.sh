@@ -15,7 +15,7 @@ if [[ "$release_notes" != \#\ Release\ "$version"* ]]; then
 fi
 
 action_id="$2"
-repo="openziti/desktop-edge-win"
+repo="hanzozt/desktop-edge-win"
 tmp_dir="/tmp/zdew-artifacts"
 rm -rf "/tmp/zdew-artifacts"
 mkdir -p "${tmp_dir}"

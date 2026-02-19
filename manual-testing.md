@@ -77,7 +77,7 @@ These are the tests you need to make sure to perform per release.
 
       .\setup-ids-for-test.ps1 `
         -ClearIdentitiesOk `
-        -Url "ctrl.cdaws.clint.demo.openziti.org:8441" `
+        -Url "ctrl.cdaws.clint.demo.hanzozt.org:8441" `
         -RouterName "ip-172-31-47-200-edge-router" `
         -ZitiHome "C:\temp\zdew-testing\"" `
         -ExternalId "some.email@address.com"

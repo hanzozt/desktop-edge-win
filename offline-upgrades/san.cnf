@@ -9,12 +9,12 @@ req_extensions      = req_ext
 C                   = US
 ST                  = California
 L                   = San Francisco
-O                   = OpenZiti
+O                   = Hanzo ZT
 OU                  = IT
-CN                  = openziti.github.io
+CN                  = hanzozt.github.io
 
 [ req_ext ]
 subjectAltName = @alt_names
 
 [ alt_names ]
-DNS.1   = openziti.github.io
+DNS.1   = hanzozt.github.io

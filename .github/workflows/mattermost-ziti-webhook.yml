@@ -19,9 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     name: POST Webhook
     steps:
-    - uses: openziti/ziti-mattermost-action-py@v1
+    - uses: hanzozt/ziti-mattermost-action-py@v1
       if: |
-        github.repository_owner == 'openziti'
+        github.repository_owner == 'hanzozt'
         && ((github.event_name != 'pull_request_review')
         || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved'))
       with:

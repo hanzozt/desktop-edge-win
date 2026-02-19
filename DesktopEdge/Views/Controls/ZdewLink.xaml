@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <TextBlock FontSize="14" TextWrapping="Wrap" TextAlignment="Center" Padding="0,30,0,0" Foreground="#638190" Margin="0,-20,0,0" FontFamily="pack://application:,,,/Assets/Fonts/#Open Sans">
         <Hyperlink x:Name="Link"
-                   NavigateUri="https://github.com/openziti/desktop-edge-win/tree/main/Installer/openssl/README.md"
+                   NavigateUri="https://github.com/hanzozt/desktop-edge-win/tree/main/Installer/openssl/README.md"
                    RequestNavigate="Hyperlink_RequestNavigate">
             <TextBlock Text="{Binding Text, RelativeSource={RelativeSource AncestorType=UserControl}}" />
         </Hyperlink>

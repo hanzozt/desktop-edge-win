@@ -25,16 +25,16 @@ namespace ZitiDesktopEdge.Utility {
     public static class GithubAPI {
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 #if WIN32CRYPTO
-        public const string ProdUrl = "https://get.openziti.io/zdew/stable-win32crypto.json";
+        public const string ProdUrl = "https://get.hanzozt.dev/zdew/stable-win32crypto.json";
 #else
-        public const string ProdUrl = "https://get.openziti.io/zdew/stable.json";
+        public const string ProdUrl = "https://get.hanzozt.dev/zdew/stable.json";
 #endif
 
         public static JObject GetJson(string url) {
             HttpWebRequest httpWebRequest = WebRequest.CreateHttp(url);
             httpWebRequest.Method = "GET";
             httpWebRequest.ContentType = "application/json";
-            httpWebRequest.UserAgent = "OpenZiti UpdateService";
+            httpWebRequest.UserAgent = "Hanzo ZT UpdateService";
             HttpWebResponse httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
             StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream());
             string currentResponse = streamReader.ReadToEnd();
@@ -45,7 +45,7 @@ namespace ZitiDesktopEdge.Utility {
             HttpWebRequest httpWebRequest = WebRequest.CreateHttp(url);
             httpWebRequest.Method = "GET";
             httpWebRequest.ContentType = "application/json";
-            httpWebRequest.UserAgent = "OpenZiti UpdateService";
+            httpWebRequest.UserAgent = "Hanzo ZT UpdateService";
             HttpWebResponse httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
             StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream());
             string currentResponse = streamReader.ReadToEnd();

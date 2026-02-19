@@ -1259,7 +1259,7 @@ namespace ZitiDesktopEdge {
                         LoadIdentities(true);
                     }
                 } else if (e.Action == "needs_ext_login_do_not_match") {
-                    //this was here previously but was chnaged in https://github.com/openziti/desktop-edge-win/commit/4ce8d2c6
+                    //this was here previously but was chnaged in https://github.com/hanzozt/desktop-edge-win/commit/4ce8d2c6
                     //leaving here for history's sake at this point
                     var found = identities.Find(i => i.Identifier == e.Id.Identifier);
                     if (found != null) {
@@ -1754,7 +1754,7 @@ namespace ZitiDesktopEdge {
                 await ShowBlurbAsync("Unexpected error when adding identity!", e.Message);
             } catch (Exception e) {
                 ZdewLink linkControl = new ZdewLink {
-                    NavigateUri = new Uri("https://openziti.discourse.group/"),
+                    NavigateUri = new Uri("https://community.hanzozt.dev/"),
                     Text = "Visit our support forum",
                 };
 

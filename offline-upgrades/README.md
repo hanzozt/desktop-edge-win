@@ -11,7 +11,7 @@ added. The following URLs will be connected to while verifying the installer:
 
 * http://crl.globalsign.com/gsgccr45evcodesignca2020.crl
 * http://crl3.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crl
-* https://openziti.github.io/crl/openziti.crl
+* https://hanzozt.github.io/crl/hanzozt.crl
 
 This folder illustrates how you can use the automatic upgrade behavior while being entirely offline.
 
@@ -45,11 +45,11 @@ copied the contents locally. All commands will be executed relative to this READ
         Invoke-WebRequest -Uri "http://crl.globalsign.com/codesigningrootr45.crl" -OutFile  .\offline\codesigningrootr45.crl
         Invoke-WebRequest -Uri "http://crl3.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crl" -OutFile  .\offline\DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crl
         Invoke-WebRequest -Uri "http://crl3.digicert.com/DigiCertTrustedRootG4.crl" -OutFile  .\offline\DigiCertTrustedRootG4.crl
-        Invoke-WebRequest -Uri "https://openziti.github.io/crl/openziti.crl" -OutFile  .\offline\crl\openziti.crl
+        Invoke-WebRequest -Uri "https://hanzozt.github.io/crl/hanzozt.crl" -OutFile  .\offline\crl\hanzozt.crl
         Invoke-WebRequest -Uri "https://cacerts.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crt" -OutFile  .\offline\DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crt
       
 1. copy `https_server.py` and `san.cnf` to the offline folder. The python file is used later when satisfying
-   the OpenZiti CRL request and san.cnf is used with openssl below to generate a server cert.
+   the Hanzo ZT CRL request and san.cnf is used with openssl below to generate a server cert.
 
         copy-item -Path .\https_server.py -Destination .\offline\
         copy-item -Path .\san.cnf -Destination .\offline\
@@ -59,16 +59,16 @@ copied the contents locally. All commands will be executed relative to this READ
         copy-item -Path .\offline.json -Destination .\offline\
 
 1. update `offline.json` accordingly for whatever the latest version will be.
-1. Generate a full PKI for `openziti.github.io` to satisfy the CSL request the OpenZiti PKI requires. If openssl is not
+1. Generate a full PKI for `hanzozt.github.io` to satisfy the CSL request the Hanzo ZT PKI requires. If openssl is not
    available in the sandbox, run these commands locally and then transfer the files from the host machine to `c:\offline`
    within the sandbox:
 
-        openssl genrsa -out .\offline\openzitiCA.key 2048
-        openssl req -x509 -new -nodes -key .\offline\openzitiCA.key -sha256 -days 365 -out .\offline\openzitiCA.pem -subj "/C=US/ST=California/L=San Francisco/O=OpenZiti/OU=IT/CN=openzitiCA"
+        openssl genrsa -out .\offline\hanzoztCA.key 2048
+        openssl req -x509 -new -nodes -key .\offline\hanzoztCA.key -sha256 -days 365 -out .\offline\hanzoztCA.pem -subj "/C=US/ST=California/L=San Francisco/O=Hanzo ZT/OU=IT/CN=hanzoztCA"
       
-        openssl genrsa -out .\offline\openziti_server.key 2048
-        openssl req -new -key .\offline\openziti_server.key -out .\offline\openziti_server.csr -config san.cnf
-        openssl x509 -req -in .\offline\openziti_server.csr -CA .\offline\openzitiCA.pem -CAkey .\offline\openzitiCA.key -CAcreateserial -out .\offline\openziti_server.crt -days 365 -sha256 -extfile .\offline\san.cnf -extensions req_ext
+        openssl genrsa -out .\offline\hanzozt_server.key 2048
+        openssl req -new -key .\offline\hanzozt_server.key -out .\offline\hanzozt_server.csr -config san.cnf
+        openssl x509 -req -in .\offline\hanzozt_server.csr -CA .\offline\hanzoztCA.pem -CAkey .\offline\hanzoztCA.key -CAcreateserial -out .\offline\hanzozt_server.crt -days 365 -sha256 -extfile .\offline\san.cnf -extensions req_ext
 
 1. Transfer the contents of `offline` to the sandbox at `c:\offline`
 1. Transfer the "current" (or n-1) installer to the `c:\offline\` folder. Example: 2.5.1.0
@@ -92,8 +92,8 @@ These commands assume you're using Windows Sandbox. If you're using a VM, there 
         certutil -addstore CA "c:\offline\DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crt"
         certutil -addstore CA "c:\offline\DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crl"
         certutil -addstore CA "c:\offline\DigiCertTrustedRootG4.crl"
-        certutil -addstore CA "c:\offline\crl\openziti.crl"
-        certutil -addstore root "C:\offline\openzitiCA.pem"
+        certutil -addstore CA "c:\offline\crl\hanzozt.crl"
+        certutil -addstore root "C:\offline\hanzoztCA.pem"
 
 1. restart Edge if open, restart the ziti-monitor to pick up certificate-related changes:
 
@@ -104,7 +104,7 @@ These commands assume you're using Windows Sandbox. If you're using a VM, there 
 
         py -m http.server 80 -d C:\offline\
 
-1. start another powershell and Python server for delivering the OpenZiti CRL on port 443
+1. start another powershell and Python server for delivering the Hanzo ZT CRL on port 443
 
         py C:\offline\https_server.py
 
@@ -113,12 +113,12 @@ These commands assume you're using Windows Sandbox. If you're using a VM, there 
    file updates in the *HOST*, hosts file. That seems to work.
 1. add a hosts file entry for the necessary hosts:
 
-        127.0.0.1 offline.install.example crl.globalsign.com crl3.digicert.com openziti.github.io
+        127.0.0.1 offline.install.example crl.globalsign.com crl3.digicert.com hanzozt.github.io
 
 1. verify you can access: http://offline.install.example/offline.json from within the Sandbox
 1. verify the browser_download_url looks right and verify you can access that url from within the Sandbox
-1. verify you can access: https://openziti.github.io/crl/ from within the Sandbox. If you get a certificate error,
-   close Edge and open it back up again and try again. You should also see one listing: `openziti.crl`
+1. verify you can access: https://hanzozt.github.io/crl/ from within the Sandbox. If you get a certificate error,
+   close Edge and open it back up again and try again. You should also see one listing: `hanzozt.crl`
 1. Do not proceed until the two Edge checks above work properly.
 1. change the Ziti Desktop Edge for Windows to use http://offline.install.example/offline.json for the automatic
    upgrade URL.

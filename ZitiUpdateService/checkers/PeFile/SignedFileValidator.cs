@@ -53,7 +53,7 @@ namespace ZitiUpdateService.Checkers.PeFile {
             SystemCAs.Open(OpenFlags.ReadWrite);
             SystemCAs.AddRange(store.Certificates);
 
-            expectedRootCa = certFromResource("ZitiUpdateService.checkers.PeFile.openziti.rootCA.rsa.pem.txt");
+            expectedRootCa = certFromResource("ZitiUpdateService.checkers.PeFile.hanzozt.rootCA.rsa.pem.txt");
             FilePath = pathToFile;
             ImportantHashPositions = new HashPositions();
 
@@ -168,7 +168,7 @@ namespace ZitiUpdateService.Checkers.PeFile {
                                             //just allow this one error
                                             Logger.Warn("Ignoring timestamp validity issue for the existing code signing certificate. Subject: {0}, Thumbprint: {1}", innerSignerInfo.Certificate.Subject, innerSignerInfo.Certificate.Thumbprint);
                                         } else {
-                                            if (IsCertificateOpenZitiVerifies(innerSignerInfo.Certificate)) {
+                                            if (IsCertificateHanzo ZTVerifies(innerSignerInfo.Certificate)) {
                                                 Logger.Debug("Certificate {} from {} is not one needed to be verified", innerSignerInfo.Certificate.SubjectName, innerSignerInfo.Certificate.Issuer);
                                             } else {
                                                 throw;
@@ -190,8 +190,8 @@ namespace ZitiUpdateService.Checkers.PeFile {
             return list;
         }
 
-        public bool IsCertificateOpenZitiVerifies(X509Certificate2 cert) {
-            bool yesOrNo = cert.Subject.ToLower().Contains("netfoundry") || cert.Subject.ToLower().Contains("openziti");
+        public bool IsCertificateHanzo ZTVerifies(X509Certificate2 cert) {
+            bool yesOrNo = cert.Subject.ToLower().Contains("netfoundry") || cert.Subject.ToLower().Contains("hanzozt");
             if (yesOrNo) {
                 Logger.Debug("Certificate does     need verification: {0}", cert.Subject);
             } else {
@@ -206,7 +206,7 @@ namespace ZitiUpdateService.Checkers.PeFile {
             Logger.Info("Certificates extracted: {0}", list.Count);
             foreach (X509Certificate2 cert in list) {
                 Logger.Info("Checking certificate: [{0}] {1}", cert.Thumbprint, cert.Subject);
-                if (IsCertificateOpenZitiVerifies(cert)) {
+                if (IsCertificateHanzo ZTVerifies(cert)) {
                     //verify this certificate was issued from the known CA
                     try {
                         Logger.Info("Verifying trust of certificate: [{0}] {1}", cert.Subject, cert.Thumbprint);
@@ -225,7 +225,7 @@ namespace ZitiUpdateService.Checkers.PeFile {
         }
 
         public void VerifyFileHash(SignedCms cms, SignerInfo signerInfo) {
-            if (!IsCertificateOpenZitiVerifies(signerInfo.Certificate)) {
+            if (!IsCertificateHanzo ZTVerifies(signerInfo.Certificate)) {
                 return;
             }
 

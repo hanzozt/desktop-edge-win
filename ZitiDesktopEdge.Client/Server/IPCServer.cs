@@ -28,8 +28,8 @@ using ZitiDesktopEdge.DataStructures;
 
 namespace ZitiDesktopEdge.Server {
     public class IPCServer {
-        public const string PipeName = @"OpenZiti\ziti-monitor\ipc";
-        public const string EventPipeName = @"OpenZiti\ziti-monitor\events";
+        public const string PipeName = @"Hanzo ZT\ziti-monitor\ipc";
+        public const string EventPipeName = @"Hanzo ZT\ziti-monitor\events";
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
         private static int BUFFER_SIZE = 16 * 1024;

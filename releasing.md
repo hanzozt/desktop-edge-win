@@ -6,7 +6,7 @@
 1. Developer PowerShell for VS 2022
 1. the latest [Advanced Installer](https://www.advancedinstaller.com/download.html)
 1. [optional, necessary to test automatic upgrade] two signing certificates:
-    1. the OpenZiti signing cert/key/passphrase
+    1. the Hanzo ZT signing cert/key/passphrase
     1. a legitimage 3rd party CA signer
 1. (add any that are missed if there are any)
 
@@ -32,11 +32,11 @@ Once satisfied with local testing (see below), to make a new release here are th
 * make a branch for code changes from main
 * make code changes, including the version file, perform local testing
 * push code changes and merge to main using a pull request. **DO NOT include any updates to the `release-streams` at this time**
-* on merge to main the ["Build Installer"](https://github.com/openziti/desktop-edge-win/actions/workflows/installer.build.yml)
+* on merge to main the ["Build Installer"](https://github.com/hanzozt/desktop-edge-win/actions/workflows/installer.build.yml)
   action will fire. Find the action, download/test the build artifacts.
 * take note of the action's id when downloading the artifacts. From the action itself it should be shown as the top/last action run.
-  for example: https://github.com/openziti/desktop-edge-win/actions/runs/16150600186, that would have 'id': 16150600186.
-* go to the ["Create Release" action](https://github.com/openziti/desktop-edge-win/actions/workflows/publish.yml)
+  for example: https://github.com/hanzozt/desktop-edge-win/actions/runs/16150600186, that would have 'id': 16150600186.
+* go to the ["Create Release" action](https://github.com/hanzozt/desktop-edge-win/actions/workflows/publish.yml)
 * click "Run workflow" and enter inputs
   * branch: main
   * expected version to publish: enter expected version (the version needs to match the versions from the action id)
@@ -52,7 +52,7 @@ decisions related to the API/domain socket protocols used. Use your best judgeme
 Creating a release for local testing is probably best accomplished by running the `build-test-release.ps1` script. This
 script will automate much of the tedium associated with locally testing releases and allows for easy overriding of value.
 This script will update the `release-streams/beta*.json` files as well, making it easier to publish a new release. You
-will require the appropriate secrets if you want to locally test the automatic upgrade procedure as the OpenZiti signing
+will require the appropriate secrets if you want to locally test the automatic upgrade procedure as the Hanzo ZT signing
 cert is mandatory to sign the executable for the upgrade process to start. The follow secrets will be necessary:
 
 * $env:AWS_REGION="_region_"
@@ -66,7 +66,7 @@ This example builds both the openssl and win32crypto versions:
 ```
 $ver="2.7.1.5"
 .\build-test-release.ps1 -url https://netfoundry.jfrog.io/artifactory/downloads/desktop-edge-win-win32crypto -version $ver -Win32Crypto:$true
-.\build-test-release.ps1 -url https://github.com/openziti/desktop-edge-win/releases/download -version $ver -Win32Crypto:$false
+.\build-test-release.ps1 -url https://github.com/hanzozt/desktop-edge-win/releases/download -version $ver -Win32Crypto:$false
 ```
 
 After the installers finish they will output `deps-info.txt` files. This file is useful to fill out the dependencies for
@@ -105,12 +105,12 @@ For the automatic upgrade to succeed, the executable __must__ meet the following
         "assets": [
           {
             "name": "Ziti.Desktop.Edge.Client-2.1.16.exe",
-            "browser_download_url": "https://github.com/openziti/desktop-edge-win/releases/download/2.1.16/Ziti.Desktop.Edge.Client-2.1.16.exe"
+            "browser_download_url": "https://github.com/hanzozt/desktop-edge-win/releases/download/2.1.16/Ziti.Desktop.Edge.Client-2.1.16.exe"
           }
         ]
       }
 
-If you do not have the OpenZiti signer `OPENZITI_P12_PASS` variable set. When you build the installer you'll see
+If you do not have the Hanzo ZT signer `OPENZITI_P12_PASS` variable set. When you build the installer you'll see
 something like the following:
 
     Not calling signtool - env:OPENZITI_P12_PASS is not set

@@ -6,7 +6,7 @@ on:
       zet:
         description: 'A link to a ziti-edge-tunnel to use'
         required: false
-        default: 'https://github.com/openziti/ziti/releases'
+        default: 'https://github.com/hanzozt/ziti/releases'
   push:
     branches:
       - main
@@ -56,7 +56,7 @@ jobs:
       - name: Setup secrets
         run: |
           echo "${env:OPENZITI_P12_2024}" > OPENZITI_P12_2024.b64
-          C:\Windows\System32\certutil.exe -decode OPENZITI_P12_2024.b64 Installer/openziti_2024.p12
+          C:\Windows\System32\certutil.exe -decode OPENZITI_P12_2024.b64 Installer/hanzozt_2024.p12
       - name: Trying to run choco install.
         run: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
       - name: "Install Choco needs: wixtoolset ninja"

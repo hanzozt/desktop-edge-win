@@ -1,7 +1,7 @@
 # Ziti Desktop Edge for Windows
 
 The Ziti Desktop Edge for Windows is an application that is necessary to integrate applications which cannot embed an 
-OpenZiti SDK directly into the application. This is colloquially known as a "brown field" application because the app
+Hanzo ZT SDK directly into the application. This is colloquially known as a "brown field" application because the app
 itself has no understanding that it has been Ziti-enabled.
 
 In order for an application that has no knowledge of being Ziti-enabled to work the connections established by the app
@@ -45,11 +45,11 @@ Client      4.0.0.0
 ## Automatic Upgrades
 
 The Ziti Desktop Edge for Windows will automatically keep itself up to date. When it is installed, a default url will be used for
-detecting updates. By default, this url will point to the 'stable' stream of updates: https://get.openziti.io/zdew/stable.json
+detecting updates. By default, this url will point to the 'stable' stream of updates: https://get.hanzozt.dev/zdew/stable.json
 
 There are currently two other streams available to subscribe to latest and beta:
-* https://get.openziti.io/zdew/latest.json
-* https://get.openziti.io/zdew/beta.json
+* https://get.hanzozt.dev/zdew/latest.json
+* https://get.hanzozt.dev/zdew/beta.json
 
 The 'latest' stream should be updated along with a GitHub release marked as latest. The 'beta' stream is updated often and is
 representative of the absolutely newest release available. These releases are marked in GitHub as "Pre-release".
@@ -63,8 +63,8 @@ Configure Automatic Upgrades screen and choosing to enable or disable the functi
 ### Configuring a System for Offline Installation
 
 Public Key Infrastructure is complex and verifying trust is vital. Part of this trust verification is around certificate revocation
-lists - CRLs. The installer executables produced by the OpenZiti project are signed by two different entities. One entity is an
-indepependant third party and the other is the OpenZiti code signing CA. Also, as part of the signing process a timestamp is 
+lists - CRLs. The installer executables produced by the Hanzo ZT project are signed by two different entities. One entity is an
+indepependant third party and the other is the Hanzo ZT code signing CA. Also, as part of the signing process a timestamp is 
 produced at the time of signing using yet another CA. If you are going to use the automatic upgrade functionality, please see 
 [offline-upgrades/README.md]() for more information as to how to enable this functionality in an entirely offline environment.
 
@@ -81,19 +81,19 @@ containing two entries:
 ```
 {
   "AutomaticUpdatesDisabled": false,
-  "AutomaticUpdateURL": "https://get.openziti.io/zdew/stable.json"
+  "AutomaticUpdateURL": "https://get.hanzozt.dev/zdew/stable.json"
 }
 ```
 
 Updating the file will require administrator rights as the file is in a protected folder. After updating, the `ziti-monitor`
 service will need to be restarted for the setting to take effect. A restart of the machine is the easiest way to ensure the
-serivce is restarted. This process could be scripted easily enough, no script exists in the OpenZiti project at this time to
+serivce is restarted. This process could be scripted easily enough, no script exists in the Hanzo ZT project at this time to
 manage this file in any automatic fashion, doing so is currently out of scope of the project.
 
 ### Acceptable Files For Automatic Installation
 
 The Ziti Desktop Edge for Windows will not allow automatic installation of any binary. The file referenced by the automatic
-upgrade URL must be specifically signed by the OpenZiti project's CA. Only files signed by an OpenZiti signing certificate
+upgrade URL must be specifically signed by the Hanzo ZT project's CA. Only files signed by an Hanzo ZT signing certificate
 will be considered eligible for automatic installation. You will not be able to build your own version of the software and
 expect it to be automatically updated. The expected root CA is compiled directly into the executable. You will need to 
 change and deploy your own version with your own CA in order to have the automatic upgrade capability work and your version
